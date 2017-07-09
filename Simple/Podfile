@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+inhibit_all_warnings!
+install! 'cocoapods', :deterministic_uuids => false
+
+target 'R-OC-Simple' do
+
+    pod 'R-OC', :path => '../'
+
+end

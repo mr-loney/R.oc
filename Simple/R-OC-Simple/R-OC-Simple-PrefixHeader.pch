@@ -1,0 +1,14 @@
+//
+//  R-OC-Simple-PrefixHeader.pch
+//  R-OC-Simple
+//
+//  Created by jun peng on 2017/7/6.
+//  Copyright © 2017年 R-OC. All rights reserved.
+//
+
+#ifndef R_OC_Simple_PrefixHeader_pch
+#define R_OC_Simple_PrefixHeader_pch
+
+#import "R"
+
+#endif /* R_OC_Simple_PrefixHeader_pch */
