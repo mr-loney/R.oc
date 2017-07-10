@@ -7,6 +7,7 @@ require 'xcodeproj'
 #define AUTO_PROPOTY_TAG_END
 AUTO_PROPOTY_TAG_BEGIN
 AUTO_PROPOTY_TAG_END'
+@CURRENT_BUNDLE = 'mainBundle'
 ###########################################
 def img (name)
 	t = name.split('.')
@@ -15,7 +16,7 @@ def img (name)
 	fph = File.dirname(__FILE__) + "/RImage.h"
 	fpm = File.dirname(__FILE__) + "/RImage.m"
 	txtH = "@property (nonatomic,readonly) UIImage *"+name+";"
-	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\" bundle:[NSBundle CURRENT_BUNDLE]]; }"
+	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\" bundle:[NSBundle "+@CURRENT_BUNDLE+"]]; }"
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end
@@ -25,7 +26,7 @@ def xib (name)
 	fph = File.dirname(__FILE__) + "/RXib.h"
 	fpm = File.dirname(__FILE__) + "/RXib.m"
 	txtH = "@property (nonatomic,readonly) UIView *"+name+";"
-	txtM = "-(UIView*)"+name+" { return [[[NSBundle CURRENT_BUNDLE] loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }"
+	txtM = "-(UIView*)"+name+" { return [[[NSBundle "+@CURRENT_BUNDLE+"] loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }"
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end
@@ -35,7 +36,7 @@ def storyboard (name)
 	fph = File.dirname(__FILE__) + "/RStoryboard.h"
 	fpm = File.dirname(__FILE__) + "/RStoryboard.m"
 	txtH = "@property (nonatomic,readonly) UIStoryboard *"+name+";"
-	txtM = "-(UIStoryboard*)"+name+" { return [UIStoryboard storyboardWithName:@\""+name+"\" bundle:[NSBundle CURRENT_BUNDLE]]; }"
+	txtM = "-(UIStoryboard*)"+name+" { return [UIStoryboard storyboardWithName:@\""+name+"\" bundle:[NSBundle "+@CURRENT_BUNDLE+"]]; }"
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end
@@ -62,7 +63,7 @@ def writeOCFile (f1,txt1,f2,txt2)
 				end
 			end
 		end
-		File.open(f1,"w").syswrite(@htxt.join(breakTag))
+		File.open(f1,"w+").syswrite(@htxt.join(breakTag))
 
 		#.m
 		@mtxt = Array.new
@@ -82,7 +83,7 @@ def writeOCFile (f1,txt1,f2,txt2)
 				end
 			end
 		end
-		File.open(f2,"w").syswrite(@mtxt.join(breakTag))
+		File.open(f2,"w+").syswrite(@mtxt.join(breakTag))
 end
 
 def newRImageFile ()
@@ -100,8 +101,8 @@ def newRImageFile ()
 @implementation RImage
 "+@NORMAN_XCODE_TAG+"
 @end"
-	File.open(fph,"w").syswrite(txtH)
-	File.open(fpm,"w").syswrite(txtM)
+	File.open(fph,"w+").syswrite(txtH)
+	File.open(fpm,"w+").syswrite(txtM)
 end
 
 def newRXibFile ()
@@ -118,8 +119,8 @@ def newRXibFile ()
 @implementation RXib
 "+@NORMAN_XCODE_TAG+"
 @end"
-	File.open(fph,"w").syswrite(txtH)
-	File.open(fpm,"w").syswrite(txtM)
+	File.open(fph,"w+").syswrite(txtH)
+	File.open(fpm,"w+").syswrite(txtM)
 end
 
 def newRStoryboardFile ()
@@ -136,8 +137,8 @@ def newRStoryboardFile ()
 @implementation RStoryboard
 "+@NORMAN_XCODE_TAG+"
 @end"
-	File.open(fph,"w").syswrite(txtH)
-	File.open(fpm,"w").syswrite(txtM)
+	File.open(fph,"w+").syswrite(txtH)
+	File.open(fpm,"w+").syswrite(txtM)
 end
 ###########################################
 
