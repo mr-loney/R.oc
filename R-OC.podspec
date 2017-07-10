@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
         'R-OC/**/*.h'
       ]
-      spec.private_header_files = [
+      spec.preserve_path = [
         'R-OC/BundleR.rb'
       ]
   end
