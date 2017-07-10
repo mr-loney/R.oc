@@ -17,7 +17,6 @@
   "platforms": {
     "ios": "8.0"
   },
-  "prepare_command": "ruby R-OC/BundleR.rb",
   "default_subspecs": "Source",
   "subspecs": [
     {
@@ -30,6 +29,9 @@
         "R-OC/RStoryboard.{h,m}",
         "R-OC/RXib.{h,m}",
         "R-OC/**/*.h"
+      ],
+      "exclude_files": [
+        "R-OC/BundleR.rb"
       ]
     }
   ]

@@ -20,18 +20,7 @@
 		43B240121F0E5BD300CFA8D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B240101F0E5BD300CFA8D1 /* Main.storyboard */; };
 		43B240141F0E5BD300CFA8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43B240131F0E5BD300CFA8D1 /* Assets.xcassets */; };
 		43B240171F0E5BD300CFA8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B240151F0E5BD300CFA8D1 /* LaunchScreen.storyboard */; };
-		43B240251F0E5D0600CFA8D1 /* libR-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B240231F0E5BF400CFA8D1 /* libR-OC.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		43B240221F0E5BF400CFA8D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 43B2401E1F0E5BF300CFA8D1 /* R-OC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 43B23FEF1F0E5AE500CFA8D1;
-			remoteInfo = "R-OC";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		056020212271ADF9CF39A0DB /* Pods-R-OC-Simple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R-OC-Simple.debug.xcconfig"; path = "Pods/Target Support Files/Pods-R-OC-Simple/Pods-R-OC-Simple.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,7 +42,6 @@
 		43B240131F0E5BD300CFA8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43B240161F0E5BD300CFA8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43B240181F0E5BD300CFA8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43B2401E1F0E5BF300CFA8D1 /* R-OC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "R-OC.xcodeproj"; path = "../R-OC/R-OC.xcodeproj"; sourceTree = "<group>"; };
 		43B240241F0E5CE800CFA8D1 /* R-OC-Simple-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC-Simple-PrefixHeader.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43B240251F0E5D0600CFA8D1 /* libR-OC.a in Frameworks */,
 				24610A3B9D6C20C7E06A6013 /* libPods-R-OC-Simple.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,7 +84,6 @@
 			children = (
 				43B240061F0E5BD300CFA8D1 /* R-OC-Simple */,
 				43B240051F0E5BD300CFA8D1 /* Products */,
-				43B2401E1F0E5BF300CFA8D1 /* R-OC.xcodeproj */,
 				18CC516F6E7ADAB3DC6C9F1C /* Pods */,
 				BED48571679528179070A7F0 /* Frameworks */,
 			);
@@ -137,14 +123,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		43B2401F1F0E5BF300CFA8D1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				43B240231F0E5BF400CFA8D1 /* libR-OC.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		BED48571679528179070A7F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +144,7 @@
 				43B240021F0E5BD300CFA8D1 /* Resources */,
 				45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */,
 				CE022921E9296D45AA9954E5 /* [CP] Copy Pods Resources */,
+				431CF15F1F12857F00F10CDB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -202,28 +181,12 @@
 			mainGroup = 43B23FFB1F0E5BD300CFA8D1;
 			productRefGroup = 43B240051F0E5BD300CFA8D1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 43B2401F1F0E5BF300CFA8D1 /* Products */;
-					ProjectRef = 43B2401E1F0E5BF300CFA8D1 /* R-OC.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				43B240031F0E5BD300CFA8D1 /* R-OC-Simple */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		43B240231F0E5BF400CFA8D1 /* libR-OC.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libR-OC.a";
-			remoteRef = 43B240221F0E5BF400CFA8D1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		43B240021F0E5BD300CFA8D1 /* Resources */ = {
@@ -245,6 +208,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		431CF15F1F12857F00F10CDB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh -e";
+			shellScript = "${SRCROOT}/res.sh";
+		};
 		45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,7 +398,7 @@
 			baseConfigurationReference = 056020212271ADF9CF39A0DB /* Pods-R-OC-Simple.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = "R-OC-Simple-PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "R-OC-Simple/R-OC-Simple-PrefixHeader.pch";
 				INFOPLIST_FILE = "R-OC-Simple/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.resource.linking.R-OC-Simple";
@@ -435,7 +411,7 @@
 			baseConfigurationReference = 3A6F60A9198C697D64F49C06 /* Pods-R-OC-Simple.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = "R-OC-Simple-PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "R-OC-Simple/R-OC-Simple-PrefixHeader.pch";
 				INFOPLIST_FILE = "R-OC-Simple/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.resource.linking.R-OC-Simple";

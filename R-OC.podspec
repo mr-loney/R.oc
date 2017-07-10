@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'R-OC', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform     = :ios, '8.0'
-  s.prepare_command = 'ruby R-OC/BundleR.rb'
+  # s.prepare_command = 'ruby R-OC/BundleR.rb'
 
 
   #'ruby R-OC/BundleR.rb "${PROJECT_NAME}"'
@@ -27,6 +27,9 @@ Pod::Spec.new do |s|
         'R-OC/RXib.{h,m}',
 
         'R-OC/**/*.h'
+      ]
+      spec.exclude_files = [
+        'R-OC/BundleR.rb'
       ]
   end
 end
