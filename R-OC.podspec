@@ -28,8 +28,13 @@ Pod::Spec.new do |s|
 
         'R-OC/**/*.h'
       ]
-      spec.exclude_files = [
-        'R-OC/BundleR.rb'
+      spec.public_header_files = [
+        'R-OC/BundleR.rb',
+        
+        'R-OC/R.{h,m}',
+        'R-OC/RImage.{h,m}',
+        'R-OC/RStoryboard.{h,m}',
+        'R-OC/RXib.{h,m}'
       ]
   end
 end

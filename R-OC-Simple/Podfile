@@ -4,6 +4,7 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'R-OC-Simple' do
 
-    pod 'R-OC', :path => '../'
+    pod 'R-OC', :git => 'https://github.com/mr-loney/R.oc.git'
+    #:path => '../'
 
 end
