@@ -5,5 +5,5 @@
 #define AUTO_PROPOTY_TAG_BEGIN
 #define AUTO_PROPOTY_TAG_END
 AUTO_PROPOTY_TAG_BEGIN
-@property (nonatomic,readonly) UIStoryboard *sss;AUTO_PROPOTY_TAG_END
+AUTO_PROPOTY_TAG_END
 @end
