@@ -18,18 +18,17 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Source'
   s.subspec 'Source' do |spec|
-      spec.prefix_header_file = 'TinyVideo/TinyVideo-Prefix.pch'
       spec.requires_arc        = true
       spec.source_files = [
-        'R-OC/R.{h,m}',
-        'R-OC/RImage.{h,m}',
-        'R-OC/RStoryboard.{h,m}',
-        'R-OC/RXib.{h,m}',
+        'R-OC/**/*.h',
 
-        'R-OC/**/*.h'
+        'R-OC/**/R.{h,m}',
+        'R-OC/**/RImage.{h,m}',
+        'R-OC/**/RStoryboard.{h,m}',
+        'R-OC/**/RXib.{h,m}'
       ]
       spec.preserve_path = [
-        'R-OC/BundleR.rb'
+        'R-OC/**/BundleR.rb'
       ]
   end
 end

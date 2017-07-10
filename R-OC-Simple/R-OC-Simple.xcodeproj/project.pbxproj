@@ -219,7 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/sh -e";
-			shellScript = "${SRCROOT}/res.sh";
+			shellScript = "ruby ${PODS_ROOT}/R-OC/R-OC/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
 		};
 		45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
