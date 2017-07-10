@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Source'
   s.subspec 'Source' do |spec|
+      spec.prefix_header_file = 'R-OC/R-OC-Prefix.pch'
       spec.requires_arc        = true
       spec.source_files = [
         'R-OC/**/*.h',

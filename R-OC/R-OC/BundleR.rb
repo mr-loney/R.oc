@@ -15,7 +15,7 @@ def img (name)
 	fph = File.dirname(__FILE__) + "/RImage.h"
 	fpm = File.dirname(__FILE__) + "/RImage.m"
 	txtH = "@property (nonatomic,readonly) UIImage *"+name+";"
-	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\"]; }"
+	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\" bundle:[NSBundle CURRENT_BUNDLE]]; }"
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end
@@ -25,7 +25,7 @@ def xib (name)
 	fph = File.dirname(__FILE__) + "/RXib.h"
 	fpm = File.dirname(__FILE__) + "/RXib.m"
 	txtH = "@property (nonatomic,readonly) UIView *"+name+";"
-	txtM = "-(UIView*)"+name+" { return [[[NSBundle mainBundle] loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }"
+	txtM = "-(UIView*)"+name+" { return [[[NSBundle CURRENT_BUNDLE] loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }"
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end

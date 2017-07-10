@@ -1,0 +1,18 @@
+//
+//  R-OC-Prefix.pch
+//  R-OC
+//
+//  Created by jun peng on 2017/7/10.
+//  Copyright © 2017年 R-OC. All rights reserved.
+//
+
+#ifndef R_OC_Prefix_pch
+#define R_OC_Prefix_pch
+
+#import "RImage.h"
+#import "RImage+MemoryCache.h"
+#import "R.h"
+#import "RXib.h"
+#import "RStoryboard.h"
+
+#endif

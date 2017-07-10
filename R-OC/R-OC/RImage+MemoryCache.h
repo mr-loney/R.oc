@@ -10,6 +10,6 @@
 
 @interface RImage (MemoryCache)
 
--(UIImage*)img:(NSString*)resName suffix:(NSString*)suffix;
+-(UIImage*)img:(NSString*)resName suffix:(NSString*)suffix bundle:(NSBundle*)bundle;
 
 @end

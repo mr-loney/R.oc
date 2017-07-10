@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		431CF1741F1338C300F10CDB /* R-OC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC-Prefix.pch"; sourceTree = "<group>"; };
 		43B23FEF1F0E5AE500CFA8D1 /* libR-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libR-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B23FF21F0E5AE500CFA8D1 /* R_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = R_OC.h; sourceTree = "<group>"; };
 		43B23FF31F0E5AE500CFA8D1 /* R_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = R_OC.m; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 				43B23FF31F0E5AE500CFA8D1 /* R_OC.m */,
 				43B240351F0E5D7500CFA8D1 /* RBundle.h */,
 				43B240361F0E5D7500CFA8D1 /* RBundle.m */,
+				431CF1741F1338C300F10CDB /* R-OC-Prefix.pch */,
 			);
 			path = "R-OC";
 			sourceTree = "<group>";
@@ -259,6 +261,7 @@
 		43B23FF91F0E5AE500CFA8D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = "R-OC/R-OC-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -268,6 +271,7 @@
 		43B23FFA1F0E5AE500CFA8D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = "R-OC/R-OC-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -10,10 +10,12 @@
 
 @implementation RImage (MemoryCache)
 
--(UIImage*)img:(NSString*)resName suffix:(NSString*)suffix {
-    NSString *p = [[NSBundle CURRENT_BUNDLE] pathForResource:resName ofType:suffix];
+-(UIImage*)img:(NSString*)resName suffix:(NSString*)suffix bundle:(NSBundle*)bundle {
+    if (!bundle) { bundle = [NSBundle mainBundle]; }
+    
+    NSString *p = [bundle pathForResource:resName ofType:suffix];
     if (!p) {
-        p = [[NSBundle CURRENT_BUNDLE] pathForResource:resName ofType:@"tiff"];
+        p = [bundle pathForResource:resName ofType:@"tiff"];
     }
     if (p && p.length > 0) {
         UIImage *image = [UIImage imageWithContentsOfFile:p];
