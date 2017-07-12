@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43B23FEE1F0E5AE500CFA8D1"
-               BuildableName = "libR-OC.a"
-               BlueprintName = "R-OC"
+               BlueprintIdentifier = "435799DF1F16294500AB3EB1"
+               BuildableName = "ROC.framework"
+               BlueprintName = "ROC"
                ReferencedContainer = "container:R-OC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43B23FEE1F0E5AE500CFA8D1"
-            BuildableName = "libR-OC.a"
-            BlueprintName = "R-OC"
+            BlueprintIdentifier = "435799DF1F16294500AB3EB1"
+            BuildableName = "ROC.framework"
+            BlueprintName = "ROC"
             ReferencedContainer = "container:R-OC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "43B23FEE1F0E5AE500CFA8D1"
-            BuildableName = "libR-OC.a"
-            BlueprintName = "R-OC"
+            BlueprintIdentifier = "435799DF1F16294500AB3EB1"
+            BuildableName = "ROC.framework"
+            BlueprintName = "ROC"
             ReferencedContainer = "container:R-OC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

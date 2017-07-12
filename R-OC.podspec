@@ -7,29 +7,10 @@ Pod::Spec.new do |s|
   s.license =  { :type => 'BSD' }
   s.source   = { :git => 'R-OC', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
-  s.platform     = :ios, '8.0'
-  # s.prepare_command = 'ruby R-OC/BundleR.rb'
-
-
-  #'ruby R-OC/BundleR.rb "${PROJECT_NAME}"'
-
-
-  #'ruby BundleR.rb "${PROJECT_NAME}"'
-
-  s.default_subspec = 'Source'
-  s.subspec 'Source' do |spec|
-      spec.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
-      spec.requires_arc        = true
-      spec.source_files = [
-        'R-OC/**/*.h',
-
-        'R-OC/**/R.{h,m}',
-        'R-OC/**/RImage.{h,m}',
-        'R-OC/**/RStoryboard.{h,m}',
-        'R-OC/**/RXib.{h,m}'
-      ]
-      spec.preserve_path = [
-        'R-OC/**/BundleR.rb'
-      ]
+  s.platform      = :ios, '8.0'
+  s.vendored_frameworks = "Output/ROC.framework"
+  s.frameworks    = [
+    "UIKit"
+  ]
   end
 end

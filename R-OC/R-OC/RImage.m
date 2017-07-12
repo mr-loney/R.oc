@@ -1,5 +1,4 @@
 #import "RImage.h"
-#import "RImage+MemoryCache.h"
 
 @implementation RImage
 #define AUTO_PROPOTY_TAG_BEGIN

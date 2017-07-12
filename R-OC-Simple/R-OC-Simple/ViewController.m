@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    AVSpeechSynthesizer *avSpeech = [[AVSpeechSynthesizer alloc]init];
+    AVSpeechUtterance *avSpeechterance = [AVSpeechUtterance speechUtteranceWithString:@"这里是R-OC"];
+    AVSpeechSynthesisVoice *voiceType = [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
+    avSpeechterance.voice = voiceType;
+    avSpeechterance.rate *= 1;
+    [avSpeech speakUtterance:avSpeechterance];
 }
 
 
