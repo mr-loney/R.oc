@@ -1,23 +1,16 @@
 PODS:
-  - R-OC (0.0.1):
-    - R-OC/Source (= 0.0.1)
-  - R-OC/Source (0.0.1)
+  - R-OC (0.0.1)
 
 DEPENDENCIES:
-  - R-OC (from `https://github.com/mr-loney/R.oc.git`)
+  - R-OC (from `../`)
 
 EXTERNAL SOURCES:
   R-OC:
-    :git: https://github.com/mr-loney/R.oc.git
-
-CHECKOUT OPTIONS:
-  R-OC:
-    :commit: 2ef9aa928c86f1ad118ff6136bc8b95b7cc438af
-    :git: https://github.com/mr-loney/R.oc.git
+    :path: ../
 
 SPEC CHECKSUMS:
-  R-OC: fd43371d5d082f2945862e9724018e6131fad7ac
+  R-OC: 7fe64cbb71dc6f5df9a913b1461f1ae1a4b458c7
 
-PODFILE CHECKSUM: f9bce39ea9d34fc91c8599c8603725a81f005beb
+PODFILE CHECKSUM: cc479bfe9ad2886f92d78c4067a55168ee4b4b9c
 
 COCOAPODS: 1.2.0

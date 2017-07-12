@@ -5,12 +5,11 @@ Pod::Spec.new do |s|
   s.description      = '可方便的使用代码方式获取到工程中所有资源文件，包含（图片，xib，file等）'
   s.homepage         = "https://github.com/mr-loney/R.oc.git"
   s.license =  { :type => 'BSD' }
-  s.source   = { :git => 'R-OC', :tag => s.version }
+  s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform      = :ios, '8.0'
   s.vendored_frameworks = "Output/ROC.framework"
   s.frameworks    = [
     "UIKit"
   ]
-  end
 end
