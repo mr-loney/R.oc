@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform      = :ios, '8.0'
   # s.vendored_frameworks = "Output/ROC.framework"
   s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
-  s.source_files = "R-OC/R-OC/*.{h,m}"
+  s.source_files = "R-OC/R-OC/*.{h,m,rb}"
   s.frameworks    = [
     "UIKit"
   ]
