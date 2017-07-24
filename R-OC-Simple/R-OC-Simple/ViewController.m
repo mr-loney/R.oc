@@ -24,6 +24,11 @@
     avSpeechterance.voice = voiceType;
     avSpeechterance.rate *= 1;
     [avSpeech speakUtterance:avSpeechterance];
+    
+    UIImageView *img = [UIImageView new];
+    img.frame = CGRectMake(100, 100, 100, 100);
+    img.image = R.image.tab_me_on;
+    [self.view addSubview:img];
 }
 
 

@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432C9FB61F25FC430012F945 /* R.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240261F0E5D1D00CFA8D1 /* R.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432C9FB71F25FC430012F945 /* RImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240281F0E5D1D00CFA8D1 /* RImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432C9FB81F25FC430012F945 /* RStoryboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402C1F0E5D1D00CFA8D1 /* RStoryboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432C9FB91F25FC430012F945 /* RXib.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402E1F0E5D1D00CFA8D1 /* RXib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432C9FBA1F25FC430012F945 /* RBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240351F0E5D7500CFA8D1 /* RBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */ = {isa = PBXBuildFile; fileRef = 435799EA1F1629D900AB3EB1 /* BundleR.rb */; settings = {ATTRIBUTES = (Public, ); }; };
+		432C9FBC1F25FD580012F945 /* R.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240271F0E5D1D00CFA8D1 /* R.m */; };
+		432C9FBD1F25FD580012F945 /* RStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402D1F0E5D1D00CFA8D1 /* RStoryboard.m */; };
+		432C9FBE1F25FD580012F945 /* RXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402F1F0E5D1D00CFA8D1 /* RXib.m */; };
+		432C9FBF1F25FD580012F945 /* RBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240361F0E5D7500CFA8D1 /* RBundle.m */; };
 		435799E41F16294500AB3EB1 /* R-OC.h in Headers */ = {isa = PBXBuildFile; fileRef = 435799E21F16294500AB3EB1 /* R-OC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		435799EB1F1629D900AB3EB1 /* BundleR.rb in Resources */ = {isa = PBXBuildFile; fileRef = 435799EA1F1629D900AB3EB1 /* BundleR.rb */; };
-		435799EE1F162A2000AB3EB1 /* R.h in Resources */ = {isa = PBXBuildFile; fileRef = 43B240261F0E5D1D00CFA8D1 /* R.h */; };
-		435799F81F162B8E00AB3EB1 /* RImage+MemoryCache.h in Resources */ = {isa = PBXBuildFile; fileRef = 43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */; };
-		435799FA1F162B8E00AB3EB1 /* R-OC.h in Resources */ = {isa = PBXBuildFile; fileRef = 435799E21F16294500AB3EB1 /* R-OC.h */; };
 		435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */; };
-		435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */; };
+		435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		435799FD1F162C1C00AB3EB1 /* RImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240291F0E5D1D00CFA8D1 /* RImage.m */; };
-		435799FE1F162C2100AB3EB1 /* RImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240281F0E5D1D00CFA8D1 /* RImage.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +101,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				435799E41F16294500AB3EB1 /* R-OC.h in Headers */,
-				435799FE1F162C2100AB3EB1 /* RImage.h in Headers */,
+				432C9FB61F25FC430012F945 /* R.h in Headers */,
+				432C9FB71F25FC430012F945 /* RImage.h in Headers */,
+				432C9FB81F25FC430012F945 /* RStoryboard.h in Headers */,
+				432C9FB91F25FC430012F945 /* RXib.h in Headers */,
+				432C9FBA1F25FC430012F945 /* RBundle.h in Headers */,
+				432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */,
 				435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,10 +169,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				435799F81F162B8E00AB3EB1 /* RImage+MemoryCache.h in Resources */,
-				435799FA1F162B8E00AB3EB1 /* R-OC.h in Resources */,
-				435799EE1F162A2000AB3EB1 /* R.h in Resources */,
-				435799EB1F1629D900AB3EB1 /* BundleR.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432C9FBC1F25FD580012F945 /* R.m in Sources */,
+				432C9FBD1F25FD580012F945 /* RStoryboard.m in Sources */,
+				432C9FBE1F25FD580012F945 /* RXib.m in Sources */,
+				432C9FBF1F25FD580012F945 /* RBundle.m in Sources */,
 				435799FD1F162C1C00AB3EB1 /* RImage.m in Sources */,
 				435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */,
 			);
@@ -323,6 +333,7 @@
 				435799E71F16294500AB3EB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43B23FEA1F0E5AE500CFA8D1 /* Build configuration list for PBXProject "R-OC" */ = {
 			isa = XCConfigurationList;

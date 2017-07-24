@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		+/pSlzmIV0TU1eDLCOaZ05Jnb1E=
+		</data>
 		<key>BundleR.rb</key>
 		<data>
 		Y+rAJwI4FX4zLH7jVXD920BnhNQ=
@@ -11,6 +15,26 @@
 		<key>Headers/R-OC.h</key>
 		<data>
 		a2YmMMaPDMwTb/PkO5agQswzrRY=
+		</data>
+		<key>Headers/R.h</key>
+		<data>
+		wkPEoYd3bu5rYoM4uXqfBzfky2Q=
+		</data>
+		<key>Headers/RBundle.h</key>
+		<data>
+		7kXF2hCfcpTZyBx2Lep6zgnKtqE=
+		</data>
+		<key>Headers/RImage.h</key>
+		<data>
+		L8dDCIJyuzOD5GBDBxoxoWTpfls=
+		</data>
+		<key>Headers/RStoryboard.h</key>
+		<data>
+		R82TGnEQFeUlK5KRTSXmTx+HblM=
+		</data>
+		<key>Headers/RXib.h</key>
+		<data>
+		xySiJ1g+0ouJ6kOVd52m/9rthIg=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -24,9 +48,25 @@
 		<data>
 		wkPEoYd3bu5rYoM4uXqfBzfky2Q=
 		</data>
+		<key>RBundle.h</key>
+		<data>
+		7kXF2hCfcpTZyBx2Lep6zgnKtqE=
+		</data>
 		<key>RImage+MemoryCache.h</key>
 		<data>
 		v4EY3aaSlp/OyD7jEmDTAjjAj8Q=
+		</data>
+		<key>RImage.h</key>
+		<data>
+		L8dDCIJyuzOD5GBDBxoxoWTpfls=
+		</data>
+		<key>RStoryboard.h</key>
+		<data>
+		R82TGnEQFeUlK5KRTSXmTx+HblM=
+		</data>
+		<key>RXib.h</key>
+		<data>
+		xySiJ1g+0ouJ6kOVd52m/9rthIg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -53,6 +93,61 @@
 			kMuD1xCkxPQXTDvjBZFsL2pwj+Lb763xBo5IM8gK4+k=
 			</data>
 		</dict>
+		<key>Headers/R.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wkPEoYd3bu5rYoM4uXqfBzfky2Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			Gyq0V/2rzFUt+iyzmKTZ1xfib3y1HWKmab8faxICP7o=
+			</data>
+		</dict>
+		<key>Headers/RBundle.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7kXF2hCfcpTZyBx2Lep6zgnKtqE=
+			</data>
+			<key>hash2</key>
+			<data>
+			JtVjjuQhhAX+aiwjP/2zXnoD+R61scF0rr22mBXKeSk=
+			</data>
+		</dict>
+		<key>Headers/RImage.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			L8dDCIJyuzOD5GBDBxoxoWTpfls=
+			</data>
+			<key>hash2</key>
+			<data>
+			l3e8QkfKb95srLFxUXftlUih64AO0UzmrXyWLx0C+4o=
+			</data>
+		</dict>
+		<key>Headers/RStoryboard.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R82TGnEQFeUlK5KRTSXmTx+HblM=
+			</data>
+			<key>hash2</key>
+			<data>
+			ChWCHlWwbAYzV5WLIF0gywZ3VN2gHv3Recdxyf7+IKo=
+			</data>
+		</dict>
+		<key>Headers/RXib.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xySiJ1g+0ouJ6kOVd52m/9rthIg=
+			</data>
+			<key>hash2</key>
+			<data>
+			P8s0vkVQRbWUllMoVSwjaRBMooZQcnlyoOrXxMuAYec=
+			</data>
+		</dict>
 		<key>R-OC.h</key>
 		<dict>
 			<key>hash</key>
@@ -75,6 +170,17 @@
 			Gyq0V/2rzFUt+iyzmKTZ1xfib3y1HWKmab8faxICP7o=
 			</data>
 		</dict>
+		<key>RBundle.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7kXF2hCfcpTZyBx2Lep6zgnKtqE=
+			</data>
+			<key>hash2</key>
+			<data>
+			JtVjjuQhhAX+aiwjP/2zXnoD+R61scF0rr22mBXKeSk=
+			</data>
+		</dict>
 		<key>RImage+MemoryCache.h</key>
 		<dict>
 			<key>hash</key>
@@ -84,6 +190,39 @@
 			<key>hash2</key>
 			<data>
 			WAqAfVRQmhHJSPPJ8NrpLtx4+vPTwUUkdXyVfzQv9iQ=
+			</data>
+		</dict>
+		<key>RImage.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			L8dDCIJyuzOD5GBDBxoxoWTpfls=
+			</data>
+			<key>hash2</key>
+			<data>
+			l3e8QkfKb95srLFxUXftlUih64AO0UzmrXyWLx0C+4o=
+			</data>
+		</dict>
+		<key>RStoryboard.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R82TGnEQFeUlK5KRTSXmTx+HblM=
+			</data>
+			<key>hash2</key>
+			<data>
+			ChWCHlWwbAYzV5WLIF0gywZ3VN2gHv3Recdxyf7+IKo=
+			</data>
+		</dict>
+		<key>RXib.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xySiJ1g+0ouJ6kOVd52m/9rthIg=
+			</data>
+			<key>hash2</key>
+			<data>
+			P8s0vkVQRbWUllMoVSwjaRBMooZQcnlyoOrXxMuAYec=
 			</data>
 		</dict>
 	</dict>

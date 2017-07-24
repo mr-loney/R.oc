@@ -138,13 +138,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43B2401B1F0E5BD300CFA8D1 /* Build configuration list for PBXNativeTarget "R-OC-Simple" */;
 			buildPhases = (
+				431CF15F1F12857F00F10CDB /* ShellScript */,
 				4E4AAA4838A6F2A6CD491B26 /* [CP] Check Pods Manifest.lock */,
 				43B240001F0E5BD300CFA8D1 /* Sources */,
 				43B240011F0E5BD300CFA8D1 /* Frameworks */,
 				43B240021F0E5BD300CFA8D1 /* Resources */,
 				45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */,
 				CE022921E9296D45AA9954E5 /* [CP] Copy Pods Resources */,
-				431CF15F1F12857F00F10CDB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -219,7 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/sh -e";
-			shellScript = "#sudo chmod -R 1777 ${PODS_ROOT}/R-OC/R-OC/R-OC/\n#ruby ${PODS_ROOT}/R-OC/R-OC/R-OC/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
+			shellScript = "#sudo chmod -R 1777 ${PODS_ROOT}/R-OC/R-OC/R-OC/\nruby ${PODS_ROOT}/R-OC/Output/ROC.framework/Headers/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
 		};
 		45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

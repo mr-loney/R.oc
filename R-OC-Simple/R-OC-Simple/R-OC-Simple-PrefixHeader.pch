@@ -9,9 +9,6 @@
 #ifndef R_OC_Simple_PrefixHeader_pch
 #define R_OC_Simple_PrefixHeader_pch
 
-#import "R.h"
-#import "RImage.h"
-#import "RStoryboard.h"
-#import "RXib.h"
+#import <ROC/R-OC.h>
 
 #endif /* R_OC_Simple_PrefixHeader_pch */

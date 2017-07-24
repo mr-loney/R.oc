@@ -8,7 +8,9 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform      = :ios, '8.0'
-  s.vendored_frameworks = "Output/ROC.framework"
+  # s.vendored_frameworks = "Output/ROC.framework"
+  s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
+  s.source_files = "R-OC/R-OC/*.{h,m}"
   s.frameworks    = [
     "UIKit"
   ]
