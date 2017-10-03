@@ -8,15 +8,36 @@
 
 #import "R.h"
 
+static RStoryboard *Rsb;
+static RImage *Ri;
+static RXib *Rx;
+static RFile *Rf;
+
 @implementation R
 
 +(RStoryboard*)storyboard {
-    return [RStoryboard new];
+    if (!Rsb) {
+        Rsb = [RStoryboard new];
+    }
+    return Rsb;
 }
 +(RImage*)image {
-    return [RImage new];
+    if (!Ri) {
+        Ri = [RImage new];
+    }
+    return Ri;
 }
 +(RXib*)xib {
-    return [RXib new];
+    if (!Rx) {
+        Rx = [RXib new];
+    }
+    return Rx;
 }
++(RFile*)file {
+    if (!Rf) {
+        Rf = [RFile new];
+    }
+    return Rf;
+}
+
 @end

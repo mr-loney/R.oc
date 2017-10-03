@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431911531F83DF0900765758 /* RFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 431911511F83DF0900765758 /* RFile.h */; };
+		431911541F83DF0900765758 /* RFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 431911521F83DF0900765758 /* RFile.m */; };
 		432C9FB61F25FC430012F945 /* R.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240261F0E5D1D00CFA8D1 /* R.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FB71F25FC430012F945 /* RImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240281F0E5D1D00CFA8D1 /* RImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FB81F25FC430012F945 /* RStoryboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402C1F0E5D1D00CFA8D1 /* RStoryboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431911511F83DF0900765758 /* RFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFile.h; sourceTree = "<group>"; };
+		431911521F83DF0900765758 /* RFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFile.m; sourceTree = "<group>"; };
 		431CF1741F1338C300F10CDB /* R-OC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC-Prefix.pch"; sourceTree = "<group>"; };
 		435799E01F16294500AB3EB1 /* ROC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		435799E21F16294500AB3EB1 /* R-OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC.h"; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		435799E11F16294500AB3EB1 /* R-OC */ = {
 			isa = PBXGroup;
 			children = (
+				431911511F83DF0900765758 /* RFile.h */,
+				431911521F83DF0900765758 /* RFile.m */,
 				43B240261F0E5D1D00CFA8D1 /* R.h */,
 				43B240271F0E5D1D00CFA8D1 /* R.m */,
 				43B240281F0E5D1D00CFA8D1 /* RImage.h */,
@@ -100,6 +106,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431911531F83DF0900765758 /* RFile.h in Headers */,
 				435799E41F16294500AB3EB1 /* R-OC.h in Headers */,
 				432C9FB61F25FC430012F945 /* R.h in Headers */,
 				432C9FB71F25FC430012F945 /* RImage.h in Headers */,
@@ -181,6 +188,7 @@
 			files = (
 				432C9FBC1F25FD580012F945 /* R.m in Sources */,
 				432C9FBD1F25FD580012F945 /* RStoryboard.m in Sources */,
+				431911541F83DF0900765758 /* RFile.m in Sources */,
 				432C9FBE1F25FD580012F945 /* RXib.m in Sources */,
 				432C9FBF1F25FD580012F945 /* RBundle.m in Sources */,
 				435799FD1F162C1C00AB3EB1 /* RImage.m in Sources */,

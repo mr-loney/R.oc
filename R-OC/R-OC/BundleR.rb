@@ -1,4 +1,12 @@
 #!/usr/bin/ruby
+#exec 'export LANG="en_US.UTF-8"'
+#exec 'export LC_ALL="en_US.UTF-8"'
+#exec 'export LANGUAGE="en_US.UTF-8'
+#if RUBY_VERSION =~ /1.9/
+#    Encoding.default_external = Encoding::UTF_8
+#    Encoding.default_internal = Encoding::UTF_8
+#end
+
 require 'pathname'
 require 'xcodeproj'
 @TAG_BEGIN = 'AUTO_PROPOTY_TAG_BEGIN'
@@ -9,14 +17,21 @@ AUTO_PROPOTY_TAG_BEGIN
 AUTO_PROPOTY_TAG_END'
 @CURRENT_BUNDLE = 'mainBundle'
 ###########################################
+def filename_adjust(name)
+    f = name
+    f = f.gsub(/\s+/,'_')# \[*.?+$^[](){}|\/]
+    return f;
+end
 def img (name)
 	t = name.split('.')
 	name = t[0]
 	suffix = t[1]
 	fph = File.dirname(__FILE__) + "/RImage.h"
 	fpm = File.dirname(__FILE__) + "/RImage.m"
-	txtH = "@property (nonatomic,readonly) UIImage *"+name+";"
-	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\" bundle:[NSBundle "+@CURRENT_BUNDLE+"]]; }"
+	txtH = "@property (nonatomic,readonly) UIImage *"+filename_adjust(name)+";
+    "
+	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\" bundle:[NSBundle "+@CURRENT_BUNDLE+"]]; }
+    "
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end
@@ -25,18 +40,41 @@ def xib (name)
 	name = t[0]
 	fph = File.dirname(__FILE__) + "/RXib.h"
 	fpm = File.dirname(__FILE__) + "/RXib.m"
-	txtH = "@property (nonatomic,readonly) UIView *"+name+";"
-	txtM = "-(UIView*)"+name+" { return [[[NSBundle "+@CURRENT_BUNDLE+"] loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }"
+	txtH = "@property (nonatomic,readonly) UIView *"+filename_adjust(name)+";
+    "
+	txtM = "-(UIView*)"+name+" { return [[[NSBundle "+@CURRENT_BUNDLE+"] loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }
+    "
 
 	writeOCFile(fph,txtH,fpm,txtM)
+end
+def file (name)
+    t = name.split('.')
+    name = t[0]
+    suffix = t[1]
+    if suffix == nil then
+        return;
+    end
+    fph = File.dirname(__FILE__) + "/RFile.h"
+    fpm = File.dirname(__FILE__) + "/RFile.m"
+    name = filename_adjust(name);
+    txtH = "@property (nonatomic,readonly) NSString *"+name+";
+            @property (nonatomic,readonly) NSString *"+name+"_path;
+    "
+    txtM = "-(NSString*)"+name+" { return @\""+name+"\"; }
+            -(NSString*)"+name+" { return [[NSBundle "+@CURRENT_BUNDLE+"] pathForResource:@\""+name+"\" ofType:@\""+suffix+"\"]; }
+    "
+    
+    writeOCFile(fph,txtH,fpm,txtM)
 end
 def storyboard (name)
 	t = name.split('.')
 	name = t[0]
 	fph = File.dirname(__FILE__) + "/RStoryboard.h"
 	fpm = File.dirname(__FILE__) + "/RStoryboard.m"
-	txtH = "@property (nonatomic,readonly) UIStoryboard *"+name+";"
-	txtM = "-(UIStoryboard*)"+name+" { return [UIStoryboard storyboardWithName:@\""+name+"\" bundle:[NSBundle "+@CURRENT_BUNDLE+"]]; }"
+	txtH = "@property (nonatomic,readonly) UIStoryboard *"+filename_adjust(name)+";
+    "
+	txtM = "-(UIStoryboard*)"+name+" { return [UIStoryboard storyboardWithName:@\""+name+"\" bundle:[NSBundle "+@CURRENT_BUNDLE+"]]; }
+    "
 
 	writeOCFile(fph,txtH,fpm,txtM)
 end
@@ -123,6 +161,24 @@ def newRXibFile ()
 	File.open(fpm,"w+").syswrite(txtM)
 end
 
+def newRFileFile ()
+    fph = File.dirname(__FILE__) + "/RFile.h"
+    fpm = File.dirname(__FILE__) + "/RFile.m"
+    txtH = "#import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    
+    @interface RFile : NSObject
+    "+@NORMAN_XCODE_TAG+"
+    @end"
+txtM = "#import \"RXib.h\"
+
+@implementation RFile
+"+@NORMAN_XCODE_TAG+"
+@end"
+File.open(fph,"w+").syswrite(txtH)
+File.open(fpm,"w+").syswrite(txtM)
+end
+
 def newRStoryboardFile ()
 	fph = File.dirname(__FILE__) + "/RStoryboard.h"
 	fpm = File.dirname(__FILE__) + "/RStoryboard.m"
@@ -168,10 +224,8 @@ files = @target.resources_build_phase.files.to_a.map do |pbx_build_file|
 
 #取出所有打包资源
 end.select do |path|
-	name = File::basename(path)
-	name = name.gsub(/@2x|@3x/, '@2x'=>'','@3x'=>'')
-	if !@AllResource.include?(name) then
-		@AllResource[@index] = name
+	if !@AllResource.include?(path) then
+        @AllResource[@index] = path
 		@index += 1
 	end
 end
@@ -180,17 +234,45 @@ end
 newRImageFile()
 newRXibFile()
 newRStoryboardFile()
+newRFileFile()
 
+def traverse_xcasssets_dir(file_path)
+    f_name = File::basename(file_path)
+    if f_name.end_with?(".colorset") then
+    elsif f_name.end_with?(".imageset") then
+        f_name = f_name.gsub(/imageset/, 'png')
+        img(f_name)
+    elsif f_name.end_with?(".dataset") then
+    elsif f_name.end_with?(".cubetextureset") then
+    elsif f_name.end_with?(".launchimage") then
+    elsif f_name.end_with?(".appiconset") then
+    else
+        if File.directory? file_path
+            Dir.foreach(file_path) do |file|
+                if file !="." and file !=".."
+                    traverse_xcasssets_dir(file_path+"/"+file)
+                end
+            end
+        else
+    end
+    end
+    
+end
 #写文件
-@AllResource.each do |rs|
-	rs_name = File.basename(rs)
-	if rs.end_with?(".xib") then
+@AllResource.each do |path|
+    
+    rs_name = File::basename(path)
+    rs_name = rs_name.gsub(/@2x|@3x/, '@2x'=>'','@3x'=>'')
+    
+	if rs_name.end_with?(".xib") then
 		xib(rs_name)
-	elsif rs.end_with?(".png",".tiff",".jpg") then
+	elsif rs_name.end_with?(".png",".tiff",".jpg") then
 		img(rs_name)
-	elsif rs.end_with?(".storyboard") then
+	elsif rs_name.end_with?(".storyboard") then
 		storyboard(rs_name)
-	elsif rs.end_with?(".xcassets") then
-
+	elsif rs_name.end_with?(".xcassets") then
+        traverse_xcasssets_dir(path)
+    else
+        file(rs_name)
 	end
 end

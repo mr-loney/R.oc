@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RXib.h"
+#import "RFile.h"
 #import "RImage.h"
 #import "RStoryboard.h"
 
@@ -16,5 +17,6 @@
 +(RStoryboard*)storyboard;
 +(RImage*)image;
 +(RXib*)xib;
++(RFile*)file;
 
 @end
