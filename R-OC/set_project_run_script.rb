@@ -3,10 +3,11 @@
 require 'pathname'
 require 'xcodeproj'
 
-File.open("/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_LiveCommon_feature/aaaa.txt","w+").syswrite("啦啦啦啦");
-puts('啦啦啦啦')
-puts(File.dirname(__FILE__))
+ppp = "/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_LiveCommon_feature/aaaa.txt";
+
 ROOT_PATH = File.join(File.dirname(__FILE__),"../../");
+
+File.open(ppp,"w+").syswrite(ROOT_PATH);
 # puts(ROOT_PATH)
 # if File.directory? ROOT_PATH
 #     Dir.foreach(ROOT_PATH) do |file|
