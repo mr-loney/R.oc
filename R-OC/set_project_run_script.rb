@@ -7,7 +7,7 @@ ppp = "/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_Li
 
 ROOT_PATH = File.join(File.dirname(__FILE__),"../../");
 
-File.open(ppp,"w+").syswrite(HOME);
+File.open(ppp,"w+").syswrite(Dir.pwd);#HOME + " 6 "+ PATH);
 # puts(ROOT_PATH)
 # if File.directory? ROOT_PATH
 #     Dir.foreach(ROOT_PATH) do |file|
