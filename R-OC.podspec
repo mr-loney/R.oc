@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
                         project_file=`find "$project_dir" -maxdepth 1 -name "*.xcodeproj" | tail -1`
 
-                        ruby R-OC/set_project_run_script.rb $project_file
+                        ruby R-OC/set_project_run_script.rb project_dir
                    CMD
   # s.vendored_frameworks = "Output/ROC.framework"
   s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
