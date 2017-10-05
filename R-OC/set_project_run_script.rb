@@ -5,9 +5,14 @@ require 'xcodeproj'
 
 ppp = "/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_LiveCommon_feature/aaaa.txt";
 
-ROOT_PATH = File.join(File.dirname(__FILE__),"../../");
+path_to_project = "${SOURCE_ROOT}/${PROJECT_NAME}.xcodeproj"
+# project = Xcodeproj::Project.open(path_to_project)
+# main_target = project.targets.first
+# phase = main_target.new_shell_script_build_phase("Name of your Phase")
+# phase.shell_script = "do sth with ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/your.file"
+# project.save()
 
-File.open(ppp,"w+").syswrite(Dir.pwd);#HOME + " 6 "+ PATH);
+File.open(ppp,"w+").syswrite(path_to_project);#HOME + " 6 "+ PATH);
 # puts(ROOT_PATH)
 # if File.directory? ROOT_PATH
 #     Dir.foreach(ROOT_PATH) do |file|
