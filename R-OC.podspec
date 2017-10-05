@@ -8,7 +8,15 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform      = :ios, '8.0'
-  s.prepare_command = 'ruby R-OC/set_project_run_script.rb $(SOURCE_ROOT) $(PROJECT_NAME)'
+  s.prepare_command = <<-CMD
+                        current_pwd="$PWD"
+                        project_dir=`cd "../../"; pwd`
+                        cd "$current_pwd"
+
+                        # Get .xcodeproj file path (yes I know it's not a file)
+                        project_file=`find "$project_dir" -maxdepth 1 -name "*.xcodeproj" | tail -1`
+                        ruby R-OC/set_project_run_script.rb project_file
+                   CMD
   # s.vendored_frameworks = "Output/ROC.framework"
   s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
   s.source_files = "R-OC/R-OC/*.{h,m,rb}"

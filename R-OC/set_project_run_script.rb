@@ -4,18 +4,10 @@ ppp = "/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_Li
 require 'pathname'
 require 'xcodeproj'
 
-current_pwd="$PWD"
-project_dir=`cd "../../"; pwd`
-# cd "$current_pwd"
+SOURCE_ROOT = $*[0];
 
-File.open(ppp,"w+").syswrite(project_dir);#HOME + " 6 "+ PATH);
+File.open(ppp,"w+").syswrite(SOURCE_ROOT);
 
-# Get .xcodeproj file path (yes I know it's not a file)
-# project_file=`find "$project_dir" -maxdepth 1 -name "*.xcodeproj" | tail -1`
-#
-# SOURCE_ROOT = $*[0];
-# PROJECT_NAME = $*[1];
-#
 # path_to_project = SOURCE_ROOT+"/"+PROJECT_NAME+".xcodeproj"
 # project = Xcodeproj::Project.open(path_to_project)
 # main_target = project.targets.first
