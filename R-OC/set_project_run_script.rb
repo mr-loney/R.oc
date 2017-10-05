@@ -3,7 +3,7 @@
 require 'pathname'
 require 'xcodeproj'
 
-File.open("/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_LiveCommon_feature/aaaa.txt"),"w+").syswrite("啦啦啦啦");
+# File.open("/Users/pengjun/Desktop/yy-svn/entmobile_ios_branches/entmobile-ios_6.6_LiveCommon_feature/aaaa.txt"),"w+").syswrite("啦啦啦啦");
 puts('啦啦啦啦')
 puts(File.dirname(__FILE__))
 ROOT_PATH = File.join(File.dirname(__FILE__),"../../");
