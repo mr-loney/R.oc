@@ -1,11 +1,11 @@
 #!/usr/bin/ruby
-#exec 'export LANG="en_US.UTF-8"'
-#exec 'export LC_ALL="en_US.UTF-8"'
-#exec 'export LANGUAGE="en_US.UTF-8'
-#if RUBY_VERSION =~ /1.9/
-#    Encoding.default_external = Encoding::UTF_8
-#    Encoding.default_internal = Encoding::UTF_8
-#end
+exec 'export LANG="en_US.UTF-8"'
+exec 'export LC_ALL="en_US.UTF-8"'
+exec 'export LANGUAGE="en_US.UTF-8'
+if RUBY_VERSION =~ /1.9/
+   Encoding.default_external = Encoding::UTF_8
+   Encoding.default_internal = Encoding::UTF_8
+end
 
 require 'pathname'
 require 'xcodeproj'
@@ -63,7 +63,7 @@ def file (name)
     txtM = "-(NSString*)"+name+" { return @\""+name+"\"; }
             -(NSString*)"+name+" { return [[NSBundle "+@CURRENT_BUNDLE+"] pathForResource:@\""+name+"\" ofType:@\""+suffix+"\"]; }
     "
-    
+
     writeOCFile(fph,txtH,fpm,txtM)
 end
 def storyboard (name)
@@ -166,7 +166,7 @@ def newRFileFile ()
     fpm = File.dirname(__FILE__) + "/RFile.m"
     txtH = "#import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
-    
+
     @interface RFile : NSObject
     "+@NORMAN_XCODE_TAG+"
     @end"
@@ -256,14 +256,14 @@ def traverse_xcasssets_dir(file_path)
         else
     end
     end
-    
+
 end
 #写文件
 @AllResource.each do |path|
-    
+
     rs_name = File::basename(path)
     rs_name = rs_name.gsub(/@2x|@3x/, '@2x'=>'','@3x'=>'')
-    
+
 	if rs_name.end_with?(".xib") then
 		xib(rs_name)
 	elsif rs_name.end_with?(".png",".tiff",".jpg") then
