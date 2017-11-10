@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = "R-OC"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "资源索引框架"
-  s.description      = '可方便的使用代码方式获取到工程中所有资源文件，包含（图片，xib，file等）'
+  s.description      = '可方便的使用代码方式获取到工程中所有资源文件，支持xib,storyboard,img,file,xcasset等格式'
   s.homepage         = "https://github.com/mr-loney/R.oc.git"
   s.license =  { :type => 'BSD' }
   s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
