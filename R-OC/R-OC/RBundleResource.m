@@ -1,27 +1,20 @@
 //
-//  R.m
-//  R-OC
+//  RBundleResource.m
+//  ROC
 //
-//  Created by jun peng on 2017/7/1.
+//  Created by peng jun on 2017/11/13.
 //  Copyright © 2017年 R-OC. All rights reserved.
 //
 
-#import "R.h"
+#import "RBundleResource.h"
 
-static RBundle *Rb;
 static RStoryboard *Rsb;
 static RImage *Ri;
 static RXib *Rx;
 static RFile *Rf;
 
-@implementation R
+@implementation RBundleResource
 
-+(RBundle*)bundle {
-    if (!Rb) {
-        Rb = [RBundle new];
-    }
-    return Rb;
-}
 +(RStoryboard*)storyboard {
     if (!Rsb) {
         Rsb = [RStoryboard new];

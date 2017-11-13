@@ -1,5 +1,5 @@
 PODS:
-  - R-OC (0.0.1)
+  - R-OC (0.0.2)
 
 DEPENDENCIES:
   - R-OC (from `https://github.com/mr-loney/R.oc.git`)
@@ -10,11 +10,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   R-OC:
-    :commit: 24cdcb96e66dc2c8726cb3a7eac856357505fbed
+    :commit: 3234c1db38d35883235df22f6b2cdfe79aff344c
     :git: https://github.com/mr-loney/R.oc.git
 
 SPEC CHECKSUMS:
-  R-OC: d55338af6a2de88c94f4e764898df5396b646a65
+  R-OC: 81cb62bc3171c32914d18e3fecff5d07a1df7120
 
 PODFILE CHECKSUM: f9bce39ea9d34fc91c8599c8603725a81f005beb
 

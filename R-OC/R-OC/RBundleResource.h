@@ -1,8 +1,8 @@
 //
-//  R.h
-//  R-OC
+//  RBundleResource.h
+//  ROC
 //
-//  Created by jun peng on 2017/7/1.
+//  Created by peng jun on 2017/11/13.
 //  Copyright © 2017年 R-OC. All rights reserved.
 //
 
@@ -11,11 +11,9 @@
 #import "RFile.h"
 #import "RImage.h"
 #import "RStoryboard.h"
-#import "RBundle.h"
 
-@interface R : NSObject
+@interface RBundleResource : NSObject
 
-+(RBundle*)bundle;
 +(RStoryboard*)storyboard;
 +(RImage*)image;
 +(RXib*)xib;

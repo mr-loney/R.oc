@@ -14,6 +14,10 @@
 		430975EC1F0F331F00A9DE29 /* tab_me_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 430975E61F0F331F00A9DE29 /* tab_me_on@2x.png */; };
 		430975ED1F0F331F00A9DE29 /* tab_me_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 430975E71F0F331F00A9DE29 /* tab_me_on@3x.png */; };
 		430975EE1F0F331F00A9DE29 /* xxx.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430975E81F0F331F00A9DE29 /* xxx.xib */; };
+		432C271D1FB9A81400989D27 /* werewolf interface.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 432C271A1FB9A81400989D27 /* werewolf interface.xlsx */; };
+		432C271E1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png in Resources */ = {isa = PBXBuildFile; fileRef = 432C271B1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png */; };
+		432C271F1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif in Resources */ = {isa = PBXBuildFile; fileRef = 432C271C1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif */; };
+		432C27201FB9A81D00989D27 /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 432C27131FB9A7E200989D27 /* testBundle.bundle */; };
 		4339F6291FB5A2F300343BA9 /* 739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc in Resources */ = {isa = PBXBuildFile; fileRef = 4339F6271FB5A2F300343BA9 /* 739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc */; };
 		4339F62A1FB5A2F300343BA9 /* HijackReport.js in Resources */ = {isa = PBXBuildFile; fileRef = 4339F6281FB5A2F300343BA9 /* HijackReport.js */; };
 		43B240091F0E5BD300CFA8D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240081F0E5BD300CFA8D1 /* main.m */; };
@@ -34,6 +38,11 @@
 		430975E61F0F331F00A9DE29 /* tab_me_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me_on@2x.png"; sourceTree = "<group>"; };
 		430975E71F0F331F00A9DE29 /* tab_me_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me_on@3x.png"; sourceTree = "<group>"; };
 		430975E81F0F331F00A9DE29 /* xxx.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xxx.xib; sourceTree = "<group>"; };
+		432C27131FB9A7E200989D27 /* testBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		432C27151FB9A7E300989D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		432C271A1FB9A81400989D27 /* werewolf interface.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "werewolf interface.xlsx"; sourceTree = "<group>"; };
+		432C271B1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16844981-4C69-4A9E-B706-14AE9063C317.png"; sourceTree = "<group>"; };
+		432C271C1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = F94B9E13C7C511B7F8CD03E84F21BD55.gif; sourceTree = "<group>"; };
 		4339F6271FB5A2F300343BA9 /* 739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc"; sourceTree = "<group>"; };
 		4339F6281FB5A2F300343BA9 /* HijackReport.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = HijackReport.js; sourceTree = "<group>"; };
 		43B240041F0E5BD300CFA8D1 /* R-OC-Simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R-OC-Simple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +59,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		432C27101FB9A7E200989D27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43B240011F0E5BD300CFA8D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,10 +101,29 @@
 			path = res;
 			sourceTree = "<group>";
 		};
+		432C27141FB9A7E300989D27 /* testBundle */ = {
+			isa = PBXGroup;
+			children = (
+				432C27151FB9A7E300989D27 /* Info.plist */,
+			);
+			path = testBundle;
+			sourceTree = "<group>";
+		};
+		432C27191FB9A7E700989D27 /* testBundle */ = {
+			isa = PBXGroup;
+			children = (
+				432C271B1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png */,
+				432C271C1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif */,
+				432C271A1FB9A81400989D27 /* werewolf interface.xlsx */,
+			);
+			path = testBundle;
+			sourceTree = "<group>";
+		};
 		43B23FFB1F0E5BD300CFA8D1 = {
 			isa = PBXGroup;
 			children = (
 				43B240061F0E5BD300CFA8D1 /* R-OC-Simple */,
+				432C27141FB9A7E300989D27 /* testBundle */,
 				43B240051F0E5BD300CFA8D1 /* Products */,
 				18CC516F6E7ADAB3DC6C9F1C /* Pods */,
 				BED48571679528179070A7F0 /* Frameworks */,
@@ -99,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				43B240041F0E5BD300CFA8D1 /* R-OC-Simple.app */,
+				432C27131FB9A7E200989D27 /* testBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +142,7 @@
 		43B240061F0E5BD300CFA8D1 /* R-OC-Simple */ = {
 			isa = PBXGroup;
 			children = (
+				432C27191FB9A7E700989D27 /* testBundle */,
 				430975E21F0F331F00A9DE29 /* res */,
 				43B2400A1F0E5BD300CFA8D1 /* AppDelegate.h */,
 				43B2400B1F0E5BD300CFA8D1 /* AppDelegate.m */,
@@ -140,6 +177,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		432C27121FB9A7E200989D27 /* testBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 432C27181FB9A7E300989D27 /* Build configuration list for PBXNativeTarget "testBundle" */;
+			buildPhases = (
+				432C270F1FB9A7E200989D27 /* Sources */,
+				432C27101FB9A7E200989D27 /* Frameworks */,
+				432C27111FB9A7E200989D27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testBundle;
+			productName = testBundle;
+			productReference = 432C27131FB9A7E200989D27 /* testBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		43B240031F0E5BD300CFA8D1 /* R-OC-Simple */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43B2401B1F0E5BD300CFA8D1 /* Build configuration list for PBXNativeTarget "R-OC-Simple" */;
@@ -170,6 +224,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "R-OC";
 				TargetAttributes = {
+					432C27121FB9A7E200989D27 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
 					43B240031F0E5BD300CFA8D1 = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
@@ -190,15 +248,27 @@
 			projectRoot = "";
 			targets = (
 				43B240031F0E5BD300CFA8D1 /* R-OC-Simple */,
+				432C27121FB9A7E200989D27 /* testBundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		432C27111FB9A7E200989D27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432C271F1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif in Resources */,
+				432C271D1FB9A81400989D27 /* werewolf interface.xlsx in Resources */,
+				432C271E1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43B240021F0E5BD300CFA8D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432C27201FB9A81D00989D27 /* testBundle.bundle in Resources */,
 				43B240171F0E5BD300CFA8D1 /* LaunchScreen.storyboard in Resources */,
 				430975EC1F0F331F00A9DE29 /* tab_me_on@2x.png in Resources */,
 				4339F62A1FB5A2F300343BA9 /* HijackReport.js in Resources */,
@@ -227,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/sh -e";
-			shellScript = "#sudo chmod -R 1777 ${PODS_ROOT}/R-OC/R-OC/R-OC/\nruby ${PODS_ROOT}/R-OC/Output/ROC.framework/Headers/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
+			shellScript = "#sudo chmod -R 1777 ${PODS_ROOT}/R-OC/R-OC/R-OC/\nruby ${PODS_ROOT}/R-OC/R-OC/R-OC/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
 		};
 		45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -280,6 +350,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		432C270F1FB9A7E200989D27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43B240001F0E5BD300CFA8D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +389,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		432C27161FB9A7E300989D27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = testBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = yy.testBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		432C27171FB9A7E300989D27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = testBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = yy.testBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		43B240191F0E5BD300CFA8D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,6 +562,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		432C27181FB9A7E300989D27 /* Build configuration list for PBXNativeTarget "testBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				432C27161FB9A7E300989D27 /* Debug */,
+				432C27171FB9A7E300989D27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		43B23FFF1F0E5BD300CFA8D1 /* Build configuration list for PBXProject "R-OC-Simple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

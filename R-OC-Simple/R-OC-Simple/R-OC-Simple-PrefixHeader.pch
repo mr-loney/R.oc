@@ -9,6 +9,7 @@
 #ifndef R_OC_Simple_PrefixHeader_pch
 #define R_OC_Simple_PrefixHeader_pch
 
-#import <ROC/R-OC.h>
+//#import <ROC/R-OC.h>
+#import "R-OC.h"
 
 #endif /* R_OC_Simple_PrefixHeader_pch */

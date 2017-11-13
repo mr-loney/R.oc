@@ -7,44 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		431911531F83DF0900765758 /* RFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 431911511F83DF0900765758 /* RFile.h */; };
-		431911541F83DF0900765758 /* RFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 431911521F83DF0900765758 /* RFile.m */; };
+		432C27051FB9A52E00989D27 /* RBaseObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 432C27031FB9A52E00989D27 /* RBaseObject.h */; };
+		432C27061FB9A52E00989D27 /* RBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C27041FB9A52E00989D27 /* RBaseObject.m */; };
+		432C27091FB9A5D100989D27 /* RBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C27071FB9A5D100989D27 /* RBundle.m */; };
+		432C270A1FB9A5D100989D27 /* RBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 432C27081FB9A5D100989D27 /* RBundle.h */; };
+		432C270D1FB9A6FC00989D27 /* RBundleResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 432C270B1FB9A6FC00989D27 /* RBundleResource.h */; };
+		432C270E1FB9A6FC00989D27 /* RBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C270C1FB9A6FC00989D27 /* RBundleResource.m */; };
 		432C9FB61F25FC430012F945 /* R.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240261F0E5D1D00CFA8D1 /* R.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		432C9FB71F25FC430012F945 /* RImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240281F0E5D1D00CFA8D1 /* RImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		432C9FB81F25FC430012F945 /* RStoryboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402C1F0E5D1D00CFA8D1 /* RStoryboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		432C9FB91F25FC430012F945 /* RXib.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402E1F0E5D1D00CFA8D1 /* RXib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		432C9FBA1F25FC430012F945 /* RBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240351F0E5D7500CFA8D1 /* RBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */ = {isa = PBXBuildFile; fileRef = 435799EA1F1629D900AB3EB1 /* BundleR.rb */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBC1F25FD580012F945 /* R.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240271F0E5D1D00CFA8D1 /* R.m */; };
-		432C9FBD1F25FD580012F945 /* RStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402D1F0E5D1D00CFA8D1 /* RStoryboard.m */; };
-		432C9FBE1F25FD580012F945 /* RXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402F1F0E5D1D00CFA8D1 /* RXib.m */; };
-		432C9FBF1F25FD580012F945 /* RBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240361F0E5D7500CFA8D1 /* RBundle.m */; };
 		435799E41F16294500AB3EB1 /* R-OC.h in Headers */ = {isa = PBXBuildFile; fileRef = 435799E21F16294500AB3EB1 /* R-OC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */; };
 		435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		435799FD1F162C1C00AB3EB1 /* RImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240291F0E5D1D00CFA8D1 /* RImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		431911511F83DF0900765758 /* RFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFile.h; sourceTree = "<group>"; };
-		431911521F83DF0900765758 /* RFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFile.m; sourceTree = "<group>"; };
 		431CF1741F1338C300F10CDB /* R-OC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC-Prefix.pch"; sourceTree = "<group>"; };
+		432C26E61FB9A35400989D27 /* RFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFile.h; sourceTree = "<group>"; };
+		432C26E71FB9A35400989D27 /* RFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFile.m; sourceTree = "<group>"; };
+		432C26E81FB9A35400989D27 /* RImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RImage.h; sourceTree = "<group>"; };
+		432C26E91FB9A35400989D27 /* RImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RImage.m; sourceTree = "<group>"; };
+		432C26EA1FB9A35400989D27 /* RStoryboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RStoryboard.h; sourceTree = "<group>"; };
+		432C26EB1FB9A35400989D27 /* RStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RStoryboard.m; sourceTree = "<group>"; };
+		432C26EC1FB9A35400989D27 /* RXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXib.h; sourceTree = "<group>"; };
+		432C26ED1FB9A35400989D27 /* RXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXib.m; sourceTree = "<group>"; };
+		432C27031FB9A52E00989D27 /* RBaseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBaseObject.h; sourceTree = "<group>"; };
+		432C27041FB9A52E00989D27 /* RBaseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBaseObject.m; sourceTree = "<group>"; };
+		432C27071FB9A5D100989D27 /* RBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBundle.m; sourceTree = "<group>"; };
+		432C27081FB9A5D100989D27 /* RBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBundle.h; sourceTree = "<group>"; };
+		432C270B1FB9A6FC00989D27 /* RBundleResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBundleResource.h; sourceTree = "<group>"; };
+		432C270C1FB9A6FC00989D27 /* RBundleResource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBundleResource.m; sourceTree = "<group>"; };
 		435799E01F16294500AB3EB1 /* ROC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		435799E21F16294500AB3EB1 /* R-OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC.h"; sourceTree = "<group>"; };
 		435799E31F16294500AB3EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		435799EA1F1629D900AB3EB1 /* BundleR.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; name = BundleR.rb; path = "R-OC/BundleR.rb"; sourceTree = "<group>"; };
 		43B240261F0E5D1D00CFA8D1 /* R.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R.h; sourceTree = "<group>"; };
 		43B240271F0E5D1D00CFA8D1 /* R.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = R.m; sourceTree = "<group>"; };
-		43B240281F0E5D1D00CFA8D1 /* RImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RImage.h; sourceTree = "<group>"; };
-		43B240291F0E5D1D00CFA8D1 /* RImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RImage.m; sourceTree = "<group>"; };
 		43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RImage+MemoryCache.h"; sourceTree = "<group>"; };
 		43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RImage+MemoryCache.m"; sourceTree = "<group>"; };
-		43B2402C1F0E5D1D00CFA8D1 /* RStoryboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RStoryboard.h; sourceTree = "<group>"; };
-		43B2402D1F0E5D1D00CFA8D1 /* RStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RStoryboard.m; sourceTree = "<group>"; };
-		43B2402E1F0E5D1D00CFA8D1 /* RXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXib.h; sourceTree = "<group>"; };
-		43B2402F1F0E5D1D00CFA8D1 /* RXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXib.m; sourceTree = "<group>"; };
-		43B240351F0E5D7500CFA8D1 /* RBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBundle.h; sourceTree = "<group>"; };
-		43B240361F0E5D7500CFA8D1 /* RBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBundle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,26 +58,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432C26E31FB9A35400989D27 /* AutoGenerate */ = {
+			isa = PBXGroup;
+			children = (
+				432C27081FB9A5D100989D27 /* RBundle.h */,
+				432C27071FB9A5D100989D27 /* RBundle.m */,
+				432C26E61FB9A35400989D27 /* RFile.h */,
+				432C26E71FB9A35400989D27 /* RFile.m */,
+				432C26E81FB9A35400989D27 /* RImage.h */,
+				432C26E91FB9A35400989D27 /* RImage.m */,
+				432C26EA1FB9A35400989D27 /* RStoryboard.h */,
+				432C26EB1FB9A35400989D27 /* RStoryboard.m */,
+				432C26EC1FB9A35400989D27 /* RXib.h */,
+				432C26ED1FB9A35400989D27 /* RXib.m */,
+			);
+			path = AutoGenerate;
+			sourceTree = "<group>";
+		};
 		435799E11F16294500AB3EB1 /* R-OC */ = {
 			isa = PBXGroup;
 			children = (
-				431911511F83DF0900765758 /* RFile.h */,
-				431911521F83DF0900765758 /* RFile.m */,
+				432C26E31FB9A35400989D27 /* AutoGenerate */,
 				43B240261F0E5D1D00CFA8D1 /* R.h */,
 				43B240271F0E5D1D00CFA8D1 /* R.m */,
-				43B240281F0E5D1D00CFA8D1 /* RImage.h */,
-				43B240291F0E5D1D00CFA8D1 /* RImage.m */,
+				432C270B1FB9A6FC00989D27 /* RBundleResource.h */,
+				432C270C1FB9A6FC00989D27 /* RBundleResource.m */,
 				43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */,
 				43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */,
-				43B2402C1F0E5D1D00CFA8D1 /* RStoryboard.h */,
-				43B2402D1F0E5D1D00CFA8D1 /* RStoryboard.m */,
-				43B2402E1F0E5D1D00CFA8D1 /* RXib.h */,
-				43B2402F1F0E5D1D00CFA8D1 /* RXib.m */,
-				43B240351F0E5D7500CFA8D1 /* RBundle.h */,
-				43B240361F0E5D7500CFA8D1 /* RBundle.m */,
 				431CF1741F1338C300F10CDB /* R-OC-Prefix.pch */,
 				435799E21F16294500AB3EB1 /* R-OC.h */,
 				435799E31F16294500AB3EB1 /* Info.plist */,
+				432C27031FB9A52E00989D27 /* RBaseObject.h */,
+				432C27041FB9A52E00989D27 /* RBaseObject.m */,
 			);
 			path = "R-OC";
 			sourceTree = "<group>";
@@ -106,15 +118,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				431911531F83DF0900765758 /* RFile.h in Headers */,
+				432C270D1FB9A6FC00989D27 /* RBundleResource.h in Headers */,
 				435799E41F16294500AB3EB1 /* R-OC.h in Headers */,
 				432C9FB61F25FC430012F945 /* R.h in Headers */,
-				432C9FB71F25FC430012F945 /* RImage.h in Headers */,
-				432C9FB81F25FC430012F945 /* RStoryboard.h in Headers */,
-				432C9FB91F25FC430012F945 /* RXib.h in Headers */,
-				432C9FBA1F25FC430012F945 /* RBundle.h in Headers */,
 				432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */,
+				432C270A1FB9A5D100989D27 /* RBundle.h in Headers */,
 				435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */,
+				432C27051FB9A52E00989D27 /* RBaseObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,13 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432C27091FB9A5D100989D27 /* RBundle.m in Sources */,
 				432C9FBC1F25FD580012F945 /* R.m in Sources */,
-				432C9FBD1F25FD580012F945 /* RStoryboard.m in Sources */,
-				431911541F83DF0900765758 /* RFile.m in Sources */,
-				432C9FBE1F25FD580012F945 /* RXib.m in Sources */,
-				432C9FBF1F25FD580012F945 /* RBundle.m in Sources */,
-				435799FD1F162C1C00AB3EB1 /* RImage.m in Sources */,
+				432C27061FB9A52E00989D27 /* RBaseObject.m in Sources */,
 				435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */,
+				432C270E1FB9A6FC00989D27 /* RBundleResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
