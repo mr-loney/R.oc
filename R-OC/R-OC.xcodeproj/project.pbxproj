@@ -13,6 +13,10 @@
 		432C270A1FB9A5D100989D27 /* RBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 432C27081FB9A5D100989D27 /* RBundle.h */; };
 		432C270D1FB9A6FC00989D27 /* RBundleResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 432C270B1FB9A6FC00989D27 /* RBundleResource.h */; };
 		432C270E1FB9A6FC00989D27 /* RBundleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C270C1FB9A6FC00989D27 /* RBundleResource.m */; };
+		432C27211FB9ACB400989D27 /* RImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26E91FB9A35400989D27 /* RImage.m */; };
+		432C27221FB9ACB400989D27 /* RFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26E71FB9A35400989D27 /* RFile.m */; };
+		432C27231FB9ACB400989D27 /* RXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26ED1FB9A35400989D27 /* RXib.m */; };
+		432C27241FB9ACB400989D27 /* RStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26EB1FB9A35400989D27 /* RStoryboard.m */; };
 		432C9FB61F25FC430012F945 /* R.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240261F0E5D1D00CFA8D1 /* R.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */ = {isa = PBXBuildFile; fileRef = 435799EA1F1629D900AB3EB1 /* BundleR.rb */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBC1F25FD580012F945 /* R.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240271F0E5D1D00CFA8D1 /* R.m */; };
@@ -58,7 +62,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		432C26E31FB9A35400989D27 /* AutoGenerate */ = {
+		435799E11F16294500AB3EB1 /* R-OC */ = {
 			isa = PBXGroup;
 			children = (
 				432C27081FB9A5D100989D27 /* RBundle.h */,
@@ -71,14 +75,6 @@
 				432C26EB1FB9A35400989D27 /* RStoryboard.m */,
 				432C26EC1FB9A35400989D27 /* RXib.h */,
 				432C26ED1FB9A35400989D27 /* RXib.m */,
-			);
-			path = AutoGenerate;
-			sourceTree = "<group>";
-		};
-		435799E11F16294500AB3EB1 /* R-OC */ = {
-			isa = PBXGroup;
-			children = (
-				432C26E31FB9A35400989D27 /* AutoGenerate */,
 				43B240261F0E5D1D00CFA8D1 /* R.h */,
 				43B240271F0E5D1D00CFA8D1 /* R.m */,
 				432C270B1FB9A6FC00989D27 /* RBundleResource.h */,
@@ -197,9 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				432C27091FB9A5D100989D27 /* RBundle.m in Sources */,
+				432C27241FB9ACB400989D27 /* RStoryboard.m in Sources */,
 				432C9FBC1F25FD580012F945 /* R.m in Sources */,
+				432C27221FB9ACB400989D27 /* RFile.m in Sources */,
 				432C27061FB9A52E00989D27 /* RBaseObject.m in Sources */,
 				435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */,
+				432C27211FB9ACB400989D27 /* RImage.m in Sources */,
+				432C27231FB9ACB400989D27 /* RXib.m in Sources */,
 				432C270E1FB9A6FC00989D27 /* RBundleResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

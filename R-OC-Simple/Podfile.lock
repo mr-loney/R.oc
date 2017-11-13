@@ -10,11 +10,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   R-OC:
-    :commit: 3234c1db38d35883235df22f6b2cdfe79aff344c
+    :commit: 32285f0ae2f279f802074c2a743ef63825b8b2fa
     :git: https://github.com/mr-loney/R.oc.git
 
 SPEC CHECKSUMS:
-  R-OC: 81cb62bc3171c32914d18e3fecff5d07a1df7120
+  R-OC: e71b370bedb6bfd655cecaf628cbf791016f1239
 
 PODFILE CHECKSUM: f9bce39ea9d34fc91c8599c8603725a81f005beb
 
