@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   #                       ruby R-OC/set_project_run_script.rb $$project_dir
   #                  CMD
   s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
-  s.source_files = "R-OC/R-OC/*.{h,m,rb}"
+  s.source_files = "R-OC/R-OC/**/*.{h,m,rb}"
   s.frameworks    = [
     "UIKit"
   ]
