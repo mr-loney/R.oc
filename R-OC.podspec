@@ -8,6 +8,13 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform      = :ios, '8.0'
+  s.prepare_command = <<-CMD
+                        rm -rf R-OC/R-OC/RBundle.*
+                        rm -rf R-OC/R-OC/RImage.*
+                        rm -rf R-OC/R-OC/RXib.*
+                        rm -rf R-OC/R-OC/RStoryboard.*
+                        rm -rf R-OC/R-OC/RFile.*
+                   CMD
   # s.prepare_command = <<-CMD
   #                       current_pwd="$PWD"
   #                       project_dir=`cd "../../"; pwd`
@@ -17,7 +24,7 @@ Pod::Spec.new do |s|
   #
   #                       /usr/bin/ruby R-OC/R-OC/set_project_run_script.rb $project_dir
   #                  CMD
-  s.prepare_command = "/usr/bin/ruby R-OC/R-OC/set_project_run_script.rb"
+  # s.prepare_command = "/usr/bin/ruby R-OC/R-OC/set_project_run_script.rb"
   s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
   s.source_files = "R-OC/R-OC/**/*.{h,m,rb}"
   s.frameworks    = [
