@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   R-OC:
-    :commit: d85421cebd69b3b7cfe4aed2a64c9f429e0eb5ef
+    :commit: 98035379fc203a84e609be4d043c5ac50cf3c18c
     :git: https://github.com/mr-loney/R.oc.git
 
 SPEC CHECKSUMS:

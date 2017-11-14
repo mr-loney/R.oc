@@ -10,7 +10,7 @@
 #define R_OC_Prefix_pch
 
 #import "RImage.h"
-#import "RImage+MemoryCache.h"
+#import "RBaseObject+MemoryCache.h"
 #import "R.h"
 #import "RXib.h"
 #import "RStoryboard.h"

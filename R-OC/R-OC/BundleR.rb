@@ -70,8 +70,19 @@ def read_bundle_with_project(bundle)
   end
 
   bundle_resource.each do |path|
-    # puts(path)
     resource_handle(bundle_target_name, path)
+  end
+end
+
+def read_bundle_with_folder(bundle,file_path)
+	if File.directory? file_path
+      Dir.foreach(file_path) do |file|
+        if (file != '.') && (file != '..')
+          read_bundle_with_folder(bundle, file_path + '/' + file)
+				end
+      end
+	else
+			resource_handle(bundle, file_path)
   end
 end
 
@@ -112,12 +123,14 @@ def resource_handle(bundle, path)
     if path.start_with?('${BUILT_PRODUCTS_DIR}/')
       read_bundle_with_project(rs_name)
     else
-      puts(path)
+			bundle_target_name = rs_name.gsub(/.bundle/, '')
+			FileHelper.bundle(bundle_target_name)
+      read_bundle_with_folder(bundle_target_name,path)
     end
   else
     FileHelper.file(bundle, rs_name)
   end
-  end
+end
 
 # 写文件
 @AllResource.each do |path|

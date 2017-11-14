@@ -18,6 +18,7 @@
 		432C271E1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png in Resources */ = {isa = PBXBuildFile; fileRef = 432C271B1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png */; };
 		432C271F1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif in Resources */ = {isa = PBXBuildFile; fileRef = 432C271C1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif */; };
 		432C27201FB9A81D00989D27 /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 432C27131FB9A7E200989D27 /* testBundle.bundle */; };
+		432C27281FBAD93800989D27 /* 1931.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 432C27271FBAD93800989D27 /* 1931.bundle */; };
 		4339F6291FB5A2F300343BA9 /* 739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc in Resources */ = {isa = PBXBuildFile; fileRef = 4339F6271FB5A2F300343BA9 /* 739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc */; };
 		4339F62A1FB5A2F300343BA9 /* HijackReport.js in Resources */ = {isa = PBXBuildFile; fileRef = 4339F6281FB5A2F300343BA9 /* HijackReport.js */; };
 		43B240091F0E5BD300CFA8D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240081F0E5BD300CFA8D1 /* main.m */; };
@@ -53,6 +54,7 @@
 		432C271A1FB9A81400989D27 /* werewolf interface.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "werewolf interface.xlsx"; sourceTree = "<group>"; };
 		432C271B1FB9A81400989D27 /* 16844981-4C69-4A9E-B706-14AE9063C317.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16844981-4C69-4A9E-B706-14AE9063C317.png"; sourceTree = "<group>"; };
 		432C271C1FB9A81400989D27 /* F94B9E13C7C511B7F8CD03E84F21BD55.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = F94B9E13C7C511B7F8CD03E84F21BD55.gif; sourceTree = "<group>"; };
+		432C27271FBAD93800989D27 /* 1931.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = 1931.bundle; path = "R-OC-Simple/1931.bundle"; sourceTree = "<group>"; };
 		4339F6271FB5A2F300343BA9 /* 739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "739c8abf-e1dc-4655-9fc9-55788eeca0dd.doc"; sourceTree = "<group>"; };
 		4339F6281FB5A2F300343BA9 /* HijackReport.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = HijackReport.js; sourceTree = "<group>"; };
 		43B240041F0E5BD300CFA8D1 /* R-OC-Simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R-OC-Simple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		43B23FFB1F0E5BD300CFA8D1 = {
 			isa = PBXGroup;
 			children = (
+				432C27271FBAD93800989D27 /* 1931.bundle */,
 				43B240061F0E5BD300CFA8D1 /* R-OC-Simple */,
 				432C27141FB9A7E300989D27 /* testBundle */,
 				43B240051F0E5BD300CFA8D1 /* Products */,
@@ -281,6 +284,7 @@
 			files = (
 				432C27201FB9A81D00989D27 /* testBundle.bundle in Resources */,
 				43B240171F0E5BD300CFA8D1 /* LaunchScreen.storyboard in Resources */,
+				432C27281FBAD93800989D27 /* 1931.bundle in Resources */,
 				430975EC1F0F331F00A9DE29 /* tab_me_on@2x.png in Resources */,
 				4339F62A1FB5A2F300343BA9 /* HijackReport.js in Resources */,
 				430975ED1F0F331F00A9DE29 /* tab_me_on@3x.png in Resources */,

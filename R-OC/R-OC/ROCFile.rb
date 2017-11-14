@@ -53,14 +53,17 @@ AUTO_CLASS_TAG_END'
 -(" + bundleClass + '*)' + name + " {
     if (!" + name + "_s) {
         " + name + '_s = [' + bundleClass + " new];
-        " + name + '_s.selfBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"' + name + "\" withExtension:@\"bundle\"]];
+        [" + name + '_s setBundle:[NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"' + name + "\" withExtension:@\"bundle\"]]];
     }
     return " + name + "_s;
 }
 "
     writeOCFile(fph, txtH, fpm, txtM, @PROPERTY_BEGIN)
 
-    txtH = "@interface RtestBundle : NSObject<RBundleResource>
+    txtH = "@interface "+bundleClass+" : NSObject<RBundleResource>
+
+-(NSBundle*)bundle;
+-(void)setBundle:(NSBundle*)bundle;
 
 -(" + bundleClass + "Storyboard*)storyboard;
 -(" + bundleClass + "Image*)image;
@@ -71,46 +74,53 @@ AUTO_CLASS_TAG_END'
 "
     txtM = '@implementation ' + bundleClass + "
 
-static NSBundle *_selfBundle;
--(NSBundle*)selfBundle {
-if (_selfBundle) {
-    return _selfBundle;
-} else {
-    NSLog(@\"selfBundle is nil\");
-    return [NSBundle mainBundle];
+static NSBundle *_selfBundle_"+bundleClass+";
+-(NSBundle*)bundle {
+    if (_selfBundle_"+bundleClass+") {
+        return _selfBundle_"+bundleClass+";
+    } else {
+        NSLog(@\"selfBundle is nil\");
+        return [NSBundle mainBundle];
+    }
 }
+-(void)setBundle:(NSBundle*)bundle {
+    _selfBundle_"+bundleClass+" = bundle;
 }
 
+static " + bundleClass + "Storyboard *Rsb_"+bundleClass+";
 -(" + bundleClass + "Storyboard*)storyboard {
-if (!Rsb) {
-    Rsb = [" + bundleClass + "Storyboard new];
-    Rsb.bundle = [self selfBundle];
+if (!Rsb_"+bundleClass+") {
+    Rsb_"+bundleClass+" = [" + bundleClass + "Storyboard new];
+    Rsb_"+bundleClass+".bundle = [self selfBundle];
 }
-return Rsb;
+return Rsb_"+bundleClass+";
 }
+static " + bundleClass + "Image *Ri_"+bundleClass+";
 -(" + bundleClass + "Image*)image {
-if (!Ri) {
-    Ri = [" + bundleClass + "Image new];
-    Ri.bundle = [self selfBundle];
+if (!Ri_"+bundleClass+") {
+    Ri_"+bundleClass+" = [" + bundleClass + "Image new];
+    Ri_"+bundleClass+".bundle = [self selfBundle];
 }
-return Ri;
+return Ri_"+bundleClass+";
 }
+static " + bundleClass + "Xib *Rx_"+bundleClass+";
 -(" + bundleClass + "Xib*)xib {
-if (!Rx) {
-    Rx = [" + bundleClass + "Xib new];
-    Rx.bundle = [self selfBundle];
+if (!Rx_"+bundleClass+") {
+    Rx_"+bundleClass+" = [" + bundleClass + "Xib new];
+    Rx_"+bundleClass+".bundle = [self selfBundle];
 }
-return Rx;
+return Rx_"+bundleClass+";
 }
+static " + bundleClass + "File *Rf_"+bundleClass+";
 -(" + bundleClass + "File*)file {
-if (!Rf) {
-    Rf = [" + bundleClass + "File new];
-    Rf.bundle = [self selfBundle];
+if (!Rf_"+bundleClass+") {
+    Rf_"+bundleClass+" = [" + bundleClass + "File new];
+    Rf_"+bundleClass+".bundle = [self selfBundle];
 }
-return Rf;
+return Rf_"+bundleClass+";
 }
 @end
-    "
+"
     writeOCFile(fph, txtH, fpm, txtM, @CLASS_BEGIN)
 
     fph = File.dirname(__FILE__) + '/RImage.h'
@@ -173,7 +183,7 @@ return Rf;
     imgExisted = propertyExisted(fph, txtH)
     macro_tag = @PROPERTY_BEGIN;
     if !bundleClass.nil? then
-      macro_tag = macro_tag.gsub(/_TAG_/, '_R' + bundleClass + '_')
+      macro_tag = macro_tag.gsub(/_TAG_/, '_R' + filename_adjust(bundleClass) + '_')
     end
     writeOCFile(fph, txtH, fpm, txtM, macro_tag) unless imgExisted
   end
@@ -294,7 +304,7 @@ return Rf;
 @end
 "
     txtM = "#import \"RBundle.h\"
-    
+
 " + @SET_CLASS_TAG + "
 
 @implementation RBundle
@@ -321,7 +331,7 @@ return Rf;
 
 "
     txtM = "#import \"RImage.h\"
-#import \"RImage+MemoryCache.h\"
+#import \"RBaseObject+MemoryCache.h\"
 
 @implementation RImage
 " + @SET_PROPERTY_TAG + "
