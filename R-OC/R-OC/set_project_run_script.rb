@@ -8,7 +8,7 @@ path_to_project = $*[0];
 @htxt = []
 @index = 0;
 ENV.each do |e|
-  @htxt[index] = e
+  @htxt[@index] = e
   @index += 1;
 end
 
