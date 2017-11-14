@@ -8,240 +8,411 @@
 # end
 
 class ROCFile
-   # 构造函数
-   def initialize()
-     @TAG_BEGIN = 'AUTO_PROPOTY_TAG_BEGIN'
-     @TAG_END = 'AUTO_PROPOTY_TAG_END'
-     @NORMAN_XCODE_TAG = '#define AUTO_PROPOTY_TAG_BEGIN
+  # 构造函数
+  def initialize
+    @PROPERTY_BEGIN = 'AUTO_PROPOTY_TAG_BEGIN'
+    @PROPERTY_END = 'AUTO_PROPOTY_TAG_END'
+    @SET_PROPERTY_TAG = '#define AUTO_PROPOTY_TAG_BEGIN
 #define AUTO_PROPOTY_TAG_END
 AUTO_PROPOTY_TAG_BEGIN
 AUTO_PROPOTY_TAG_END'
-   end
+    @CLASS_BEGIN = 'AUTO_CLASS_TAG_BEGIN'
+    @CLASS_END = 'AUTO_CLASS_TAG_END'
+    @SET_CLASS_TAG = '#define AUTO_CLASS_TAG_BEGIN
+#define AUTO_CLASS_TAG_END
+AUTO_CLASS_TAG_BEGIN
+AUTO_CLASS_TAG_END'
+  end
 
-   def reset()
-     newBundleFile()
-     newRImageFile()
-     newRXibFile()
-     newRStoryboardFile()
-     newRFileFile()
-   end
+  def reset
+    newBundleFile
+    newRImageFile
+    newRXibFile
+    newRStoryboardFile
+    newRFileFile
+  end
 
-   ###########################################
-   def filename_adjust(name)
-       f = name
-       f = f.gsub(/\s+/,'_')# \[*.?+$^[](){}|\/]
-       f = f.gsub(/-/,'_')
-       if !f.gsub(/^[0-9]/,'').nil? then
-         f = 'a'+f;
-       end
-       return f;
-   end
+  ###########################################
+  def filename_adjust(name)
+    f = name
+    f = f.gsub(/\s+/, '_') # \[*.?+$^[](){}|\/]
+    f = f.gsub('-', '_')
+    f = 'a' + f if f[0, 1] =~ /^[0-9]/
+    f
+  end
 
-   def img (name)
-   	t = name.split('.')
-   	name = t[0]
-   	suffix = t[1]
-   	fph = File.dirname(__FILE__) + "/RImage.h"
-   	fpm = File.dirname(__FILE__) + "/RImage.m"
-   	txtH = "@property (nonatomic,readonly) UIImage *"+filename_adjust(name)+";
+  def bundle(name)
+    t = name.split('.')
+    name = t[0]
+    fph = File.dirname(__FILE__) + '/RBundle.h'
+    fpm = File.dirname(__FILE__) + '/RBundle.m'
+    name = filename_adjust(name)
+    bundleClass = 'R' + name
+    txtH = '@property (nonatomic,readonly) ' + bundleClass + ' *' + name + ";\n"
+    txtM = 'static R' + name + ' *' + name + "_s;
+-(" + bundleClass + '*)' + name + " {
+    if (!" + name + "_s) {
+        " + name + '_s = [' + bundleClass + " new];
+        " + name + '_s.selfBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"' + name + "\" withExtension:@\"bundle\"]];
+    }
+    return " + name + "_s;
+}
 "
-   	txtM = "-(UIImage*)"+name+" { return [self img:@\""+name+"\" suffix:@\""+suffix+"\" bundle:self.bundle]; }
+    writeOCFile(fph, txtH, fpm, txtM, @PROPERTY_BEGIN)
+
+    txtH = "@interface RtestBundle : NSObject<RBundleResource>
+
+-(" + bundleClass + "Storyboard*)storyboard;
+-(" + bundleClass + "Image*)image;
+-(" + bundleClass + "Xib*)xib;
+-(" + bundleClass + "File*)file;
+
+@end
 "
+    txtM = '@implementation ' + bundleClass + "
 
-       imgExisted = propertyExisted(fph,txtH)
-       if !imgExisted then
-   	     writeOCFile(fph,txtH,fpm,txtM)
-       end
-   end
+static NSBundle *_selfBundle;
+-(NSBundle*)selfBundle {
+if (_selfBundle) {
+    return _selfBundle;
+} else {
+    NSLog(@\"selfBundle is nil\");
+    return [NSBundle mainBundle];
+}
+}
 
-   def xib (name)
-   	t = name.split('.')
-   	name = t[0]
-   	fph = File.dirname(__FILE__) + "/RXib.h"
-   	fpm = File.dirname(__FILE__) + "/RXib.m"
-   	txtH = "@property (nonatomic,readonly) UIView *"+filename_adjust(name)+";
+-(" + bundleClass + "Storyboard*)storyboard {
+if (!Rsb) {
+    Rsb = [" + bundleClass + "Storyboard new];
+    Rsb.bundle = [self selfBundle];
+}
+return Rsb;
+}
+-(" + bundleClass + "Image*)image {
+if (!Ri) {
+    Ri = [" + bundleClass + "Image new];
+    Ri.bundle = [self selfBundle];
+}
+return Ri;
+}
+-(" + bundleClass + "Xib*)xib {
+if (!Rx) {
+    Rx = [" + bundleClass + "Xib new];
+    Rx.bundle = [self selfBundle];
+}
+return Rx;
+}
+-(" + bundleClass + "File*)file {
+if (!Rf) {
+    Rf = [" + bundleClass + "File new];
+    Rf.bundle = [self selfBundle];
+}
+return Rf;
+}
+@end
+    "
+    writeOCFile(fph, txtH, fpm, txtM, @CLASS_BEGIN)
+
+    fph = File.dirname(__FILE__) + '/RImage.h'
+    fpm = File.dirname(__FILE__) + '/RImage.m'
+    txtH = '@interface ' + bundleClass + "Image : RBaseObject\n" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
 "
-   	txtM = "-(UIView*)"+name+" { return [[self.bundle loadNibNamed:@\""+name+"\" owner:nil options:nil] firstObject]; }
+    txtM = '@implementation ' + bundleClass + "Image\n" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
 "
+    writeOCFile(fph, txtH, fpm, txtM, @CLASS_BEGIN)
 
-   	writeOCFile(fph,txtH,fpm,txtM)
-   end
-
-   def file (name)
-       t = name.split('.')
-       name = t[0]
-       suffix = t[1]
-       if suffix == nil then
-           return;
-       end
-       fph = File.dirname(__FILE__) + "/RFile.h"
-       fpm = File.dirname(__FILE__) + "/RFile.m"
-       name = filename_adjust(name);
-       txtH = "@property (nonatomic,readonly) NSString *"+name+";
-@property (nonatomic,readonly) NSString *"+name+"_path;
+    fph = File.dirname(__FILE__) + '/RXib.h'
+    fpm = File.dirname(__FILE__) + '/RXib.m'
+    txtH = '@interface ' + bundleClass + "Xib : RBaseObject
+" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
 "
-       txtM = "-(NSString*)"+name+" { return @\""+name+"\"; }
--(NSString*)"+name+" { return [self.bundle pathForResource:@\""+name+"\" ofType:@\""+suffix+"\"]; }
+    txtM = '@implementation ' + bundleClass + "Xib
+" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
 "
+    writeOCFile(fph, txtH, fpm, txtM, @CLASS_BEGIN)
 
-       writeOCFile(fph,txtH,fpm,txtM)
-   end
-
-   def storyboard (name)
-   	t = name.split('.')
-   	name = t[0]
-   	fph = File.dirname(__FILE__) + "/RStoryboard.h"
-   	fpm = File.dirname(__FILE__) + "/RStoryboard.m"
-   	txtH = "@property (nonatomic,readonly) UIStoryboard *"+filename_adjust(name)+";
+    fph = File.dirname(__FILE__) + '/RStoryboard.h'
+    fpm = File.dirname(__FILE__) + '/RStoryboard.m'
+    txtH = '@interface ' + bundleClass + "Storyboard : RBaseObject
+" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
 "
-   	txtM = "-(UIStoryboard*)"+name+" { return [UIStoryboard storyboardWithName:@\""+name+"\" bundle:self.bundle]; }
+    txtM = '@implementation ' + bundleClass + "Storyboard
+" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
 "
+    writeOCFile(fph, txtH, fpm, txtM, @CLASS_BEGIN)
 
-   	writeOCFile(fph,txtH,fpm,txtM)
-   end
+    fph = File.dirname(__FILE__) + '/RFile.h'
+    fpm = File.dirname(__FILE__) + '/RFile.m'
+    txtH = '@interface ' + bundleClass + "File : RBaseObject
+" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
+"
+    txtM = '@implementation ' + bundleClass + "File
+" + @SET_PROPERTY_TAG.gsub(/_TAG_/, '_' + bundleClass + '_') + "
+@end
+"
+    writeOCFile(fph, txtH, fpm, txtM, @CLASS_BEGIN)
+    end
 
-      def propertyExisted (f1,txt1)
-      		#.h
-      		File.open(f1,"r") do |file|
-      			while line  = file.gets
-      				if line.gsub(/ /,'') == txt1.gsub(/ /,'') then
-                return true;
-      				end
-      			end
-      		end
-          return false;
+  def img(bundleClass, name)
+    t = name.split('.')
+    name = t[0]
+    suffix = t[1]
+    fph = File.dirname(__FILE__) + '/RImage.h'
+    fpm = File.dirname(__FILE__) + '/RImage.m'
+    # bundleClass = "R"+bundle;
+    txtH = '@property (nonatomic,readonly) UIImage *' + filename_adjust(name) + ";\n"
+    txtM = '-(UIImage*)' + filename_adjust(name) + ' { return [self img:@"' + name + '" suffix:@"' + suffix + "\" bundle:self.bundle]; }\n"
+
+    imgExisted = propertyExisted(fph, txtH)
+    macro_tag = @PROPERTY_BEGIN;
+    if !bundleClass.nil? then
+      macro_tag = macro_tag.gsub(/_TAG_/, '_R' + bundleClass + '_')
+    end
+    writeOCFile(fph, txtH, fpm, txtM, macro_tag) unless imgExisted
+  end
+
+  def xib(bundleClass, name)
+    t = name.split('.')
+    name = t[0]
+    fph = File.dirname(__FILE__) + '/RXib.h'
+    fpm = File.dirname(__FILE__) + '/RXib.m'
+    txtH = '@property (nonatomic,readonly) UIView *' + filename_adjust(name) + ";\n"
+    txtM = '-(UIView*)' + filename_adjust(name) + ' { return [[self.bundle loadNibNamed:@"' + name + "\" owner:nil options:nil] firstObject]; }\n"
+
+    macro_tag = @PROPERTY_BEGIN;
+    if !bundleClass.nil? then
+      macro_tag = macro_tag.gsub(/_TAG_/, '_R' + bundleClass + '_')
+    end
+    writeOCFile(fph, txtH, fpm, txtM, macro_tag)
+  end
+
+  def file(bundleClass, name)
+    t = name.split('.')
+    name = t[0]
+    suffix = t[1]
+    return if suffix.nil?
+    fph = File.dirname(__FILE__) + '/RFile.h'
+    fpm = File.dirname(__FILE__) + '/RFile.m'
+    txtH = '@property (nonatomic,readonly) NSString *' + filename_adjust(name) + ";
+@property (nonatomic,readonly) NSString *" + filename_adjust(name) + "_path;\n"
+    txtM = '-(NSString*)' + filename_adjust(name) + ' { return @"' + name + "\"; }
+-(NSString*)" + filename_adjust(name) + '_path { return [self.bundle pathForResource:@"' + name + '" ofType:@"' + suffix + "\"]; }\n"
+
+    macro_tag = @PROPERTY_BEGIN;
+    if !bundleClass.nil? then
+        macro_tag = macro_tag.gsub(/_TAG_/, '_R' + bundleClass + '_')
+    end
+    writeOCFile(fph, txtH, fpm, txtM, macro_tag)
+  end
+
+  def storyboard(bundleClass, name)
+    t = name.split('.')
+    name = t[0]
+    fph = File.dirname(__FILE__) + '/RStoryboard.h'
+    fpm = File.dirname(__FILE__) + '/RStoryboard.m'
+    txtH = '@property (nonatomic,readonly) UIStoryboard *' + filename_adjust(name) + ";\n"
+    txtM = '-(UIStoryboard*)' + name + ' { return [UIStoryboard storyboardWithName:@"' + name + "\" bundle:self.bundle]; }\n"
+
+    macro_tag = @PROPERTY_BEGIN;
+    if !bundleClass.nil? then
+        macro_tag = macro_tag.gsub(/_TAG_/, '_R' + bundleClass + '_')
+    end
+    writeOCFile(fph, txtH, fpm, txtM, macro_tag)
+  end
+
+  def propertyExisted(f1, txt1)
+    # .h
+    File.open(f1, 'r') do |file|
+      while line = file.gets
+        return true if line.delete(' ') == txt1.delete(' ')
       end
+    end
+    false
+  end
 
-   def writeOCFile (f1,txt1,f2,txt2)
-   		breakTag = "
-   		"
-   		breakTag = ""
-   		#.h
-   		@htxt = Array.new
-   		@writeed = false
-   		@i = 0
-   		File.open(f1,"r") do |file|
-   			while line  = file.gets
-   				@htxt[@i] = line
-   				@i += 1
-   				if line.chop.gsub(/ /,'') == @TAG_BEGIN then
-   					if !@writeed then
-   						@htxt[@i] = txt1
-   						@i += 1
-   						@writeed = true
-   					end
-   				end
-   			end
-   		end
-   		File.open(f1,"w+").syswrite(@htxt.join(breakTag))
+  def writeOCFile(f1, txt1, f2, txt2, tag)
+    breakTag = "
+ 		"
+    breakTag = ''
+    # .h
+    @htxt = []
+    @writeed = false
+    @i = 0
+    File.open(f1, 'r') do |file|
+      while line = file.gets
+        @htxt[@i] = line
+        @i += 1
+        next unless line.chop.delete(' ') == tag
+        next if @writeed
+        @htxt[@i] = txt1
+        @i += 1
+        @writeed = true
+       end
+    end
+    File.open(f1, 'w+').syswrite(@htxt.join(breakTag))
 
-   		#.m
-   		@mtxt = Array.new
-   		@i = 0
-   		@writeed = false
-   		File.open(f2,"r") do |file|
-   			while line  = file.gets
-   				@mtxt[@i] = line
-   				@i += 1
-          if line.chop.gsub(/ /,'') == @TAG_BEGIN then
-   					if !@writeed then
-   						@mtxt[@i] = txt2
-   						@i += 1
-   						@writeed = true
-   					end
-   				end
-   			end
-   		end
-   		File.open(f2,"w+").syswrite(@mtxt.join(breakTag))
-   end
+    # .m
+    @mtxt = []
+    @i = 0
+    @writeed = false
+    File.open(f2, 'r') do |file|
+      while line = file.gets
+        @mtxt[@i] = line
+        @i += 1
+        next unless line.chop.delete(' ') == tag
+        next if @writeed
+        @mtxt[@i] = txt2
+        @i += 1
+        @writeed = true
+       end
+    end
+    File.open(f2, 'w+').syswrite(@mtxt.join(breakTag))
+  end
 
-   def newBundleFile ()
-   	fph = File.dirname(__FILE__) + "/RBundle.h"
-   	fpm = File.dirname(__FILE__) + "/RBundle.m"
-   		txtH = "#import <Foundation/Foundation.h>
+  def newBundleFile
+    fph = File.dirname(__FILE__) + '/RBundle.h'
+    fpm = File.dirname(__FILE__) + '/RBundle.m'
+    txtH = "#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import \"RBundleResource.h\"
+#import \"RXib.h\"
+#import \"RFile.h\"
+#import \"RImage.h\"
+#import \"RStoryboard.h\"
+
+" + @SET_CLASS_TAG + "
 
 @interface RBundle : NSObject
-@end"
-   	txtM = "#import \"RBundle.h\"
+" + @SET_PROPERTY_TAG + "
+@end
+"
+    txtM = "#import \"RBundle.h\"
+    
+" + @SET_CLASS_TAG + "
 
 @implementation RBundle
-@end"
-   	File.open(fph,"w+").syswrite(txtH)
-   	File.open(fpm,"w+").syswrite(txtM)
-   end
+" + @SET_PROPERTY_TAG + "
+@end
 
-   def newRImageFile ()
-   	fph = File.dirname(__FILE__) + "/RImage.h"
-   	fpm = File.dirname(__FILE__) + "/RImage.m"
-   		txtH = "#import <Foundation/Foundation.h>
+"
+    File.open(fph, 'w+').syswrite(txtH)
+    File.open(fpm, 'w+').syswrite(txtM)
+  end
+
+  def newRImageFile
+    fph = File.dirname(__FILE__) + '/RImage.h'
+    fpm = File.dirname(__FILE__) + '/RImage.m'
+    txtH = "#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import \"RBaseObject.h\"
 
 @interface RImage : RBaseObject
-"+@NORMAN_XCODE_TAG+"
-@end"
-   	txtM = "#import \"RImage.h\"
+" + @SET_PROPERTY_TAG + "
+@end
+
+" + @SET_CLASS_TAG + "
+
+"
+    txtM = "#import \"RImage.h\"
 #import \"RImage+MemoryCache.h\"
 
 @implementation RImage
-"+@NORMAN_XCODE_TAG+"
-@end"
-   	File.open(fph,"w+").syswrite(txtH)
-   	File.open(fpm,"w+").syswrite(txtM)
-   end
+" + @SET_PROPERTY_TAG + "
+@end
 
-   def newRXibFile ()
-   	fph = File.dirname(__FILE__) + "/RXib.h"
-   	fpm = File.dirname(__FILE__) + "/RXib.m"
-   		txtH = "#import <Foundation/Foundation.h>
+" + @SET_CLASS_TAG + "
+
+"
+    File.open(fph, 'w+').syswrite(txtH)
+    File.open(fpm, 'w+').syswrite(txtM)
+  end
+
+  def newRXibFile
+    fph = File.dirname(__FILE__) + '/RXib.h'
+    fpm = File.dirname(__FILE__) + '/RXib.m'
+    txtH = "#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import \"RBaseObject.h\"
 
 @interface RXib : RBaseObject
-"+@NORMAN_XCODE_TAG+"
-@end"
-   	txtM = "#import \"RXib.h\"
+" + @SET_PROPERTY_TAG + "
+@end
+
+" + @SET_CLASS_TAG + "
+
+"
+    txtM = "#import \"RXib.h\"
 
 @implementation RXib
-"+@NORMAN_XCODE_TAG+"
-@end"
-   	File.open(fph,"w+").syswrite(txtH)
-   	File.open(fpm,"w+").syswrite(txtM)
-   end
+" + @SET_PROPERTY_TAG + "
+@end
 
-   def newRFileFile ()
-       fph = File.dirname(__FILE__) + "/RFile.h"
-       fpm = File.dirname(__FILE__) + "/RFile.m"
-       txtH = "#import <Foundation/Foundation.h>
+" + @SET_CLASS_TAG + "
+
+"
+    File.open(fph, 'w+').syswrite(txtH)
+    File.open(fpm, 'w+').syswrite(txtM)
+  end
+
+  def newRFileFile
+    fph = File.dirname(__FILE__) + '/RFile.h'
+    fpm = File.dirname(__FILE__) + '/RFile.m'
+    txtH = "#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import \"RBaseObject.h\"
 
 @interface RFile : RBaseObject
-"+@NORMAN_XCODE_TAG+"
-@end"
-   txtM = "#import \"RXib.h\"
+" + @SET_PROPERTY_TAG + "
+@end
 
-@implementation RFile
-"+@NORMAN_XCODE_TAG+"
-@end"
-   File.open(fph,"w+").syswrite(txtH)
-   File.open(fpm,"w+").syswrite(txtM)
-   end
+" + @SET_CLASS_TAG + "
 
-   def newRStoryboardFile ()
-   	fph = File.dirname(__FILE__) + "/RStoryboard.h"
-   	fpm = File.dirname(__FILE__) + "/RStoryboard.m"
-   		txtH = "#import <Foundation/Foundation.h>
+"
+    txtM = "#import \"RXib.h\"
+
+ @implementation RFile
+ " + @SET_PROPERTY_TAG + "
+ @end
+
+ " + @SET_CLASS_TAG + "
+
+ "
+    File.open(fph, 'w+').syswrite(txtH)
+    File.open(fpm, 'w+').syswrite(txtM)
+  end
+
+  def newRStoryboardFile
+    fph = File.dirname(__FILE__) + '/RStoryboard.h'
+    fpm = File.dirname(__FILE__) + '/RStoryboard.m'
+    txtH = "#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import \"RBaseObject.h\"
 
 @interface RStoryboard : RBaseObject
-"+@NORMAN_XCODE_TAG+"
-@end"
-   	txtM = "#import \"RStoryboard.h\"
+" + @SET_PROPERTY_TAG + "
+@end
+
+" + @SET_CLASS_TAG + "
+
+"
+    txtM = "#import \"RStoryboard.h\"
 
 @implementation RStoryboard
-"+@NORMAN_XCODE_TAG+"
-@end"
-   	File.open(fph,"w+").syswrite(txtH)
-   	File.open(fpm,"w+").syswrite(txtM)
-   end
-   ###########################################
+" + @SET_PROPERTY_TAG + "
+@end
+
+" + @SET_CLASS_TAG + "
+
+"
+    File.open(fph, 'w+').syswrite(txtH)
+    File.open(fpm, 'w+').syswrite(txtM)
+  end
+  ###########################################
 end

@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RXib.h"
-#import "RFile.h"
-#import "RImage.h"
-#import "RStoryboard.h"
+#import "RBaseObject.h"
 
-@interface RBundleResource : NSObject
+@protocol RBundleResource <NSObject>
 
-+(RStoryboard*)storyboard;
-+(RImage*)image;
-+(RXib*)xib;
-+(RFile*)file;
+@required
+-(NSBundle*)selfBundle;
+
+@optional
+-(__kindof RBaseObject*)storyboard;
+-(__kindof RBaseObject*)image;
+-(__kindof RBaseObject*)xib;
+-(__kindof RBaseObject*)file;
+
 
 @end

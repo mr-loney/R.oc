@@ -28,6 +28,16 @@
 		43B240171F0E5BD300CFA8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B240151F0E5BD300CFA8D1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		432C27251FB9C0B600989D27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43B23FFC1F0E5BD300CFA8D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 432C27121FB9A7E200989D27;
+			remoteInfo = testBundle;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		056020212271ADF9CF39A0DB /* Pods-R-OC-Simple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R-OC-Simple.debug.xcconfig"; path = "Pods/Target Support Files/Pods-R-OC-Simple/Pods-R-OC-Simple.debug.xcconfig"; sourceTree = "<group>"; };
 		1FC99C17473C9B9FF16D09BA /* libPods-R-OC-Simple.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-R-OC-Simple.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +219,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				432C27261FB9C0B600989D27 /* PBXTargetDependency */,
 			);
 			name = "R-OC-Simple";
 			productName = "R-OC-Simple";
@@ -297,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/sh -e";
-			shellScript = "#sudo chmod -R 1777 ${PODS_ROOT}/R-OC/R-OC/R-OC/\nruby ${PODS_ROOT}/R-OC/R-OC/R-OC/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
+			shellScript = "#sudo chmod -R 1777 ${PODS_ROOT}/R-OC/R-OC/R-OC/\n#ruby ${PODS_ROOT}/R-OC/R-OC/R-OC/BundleR.rb \"${SRCROOT}/${PROJECT_NAME}.xcodeproj\" \"${PROJECT_NAME}\"";
 		};
 		45C7B843A1E20227AA0334AD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -369,6 +380,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		432C27261FB9C0B600989D27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 432C27121FB9A7E200989D27 /* testBundle */;
+			targetProxy = 432C27251FB9C0B600989D27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		43B240101F0E5BD300CFA8D1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -409,7 +428,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = yy.testBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -435,7 +454,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = yy.testBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};

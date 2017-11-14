@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RBundleResource.h"
+#import "RXib.h"
+#import "RFile.h"
+#import "RImage.h"
+#import "RStoryboard.h"
 
 @interface RBundle : NSObject
 
 @end
+

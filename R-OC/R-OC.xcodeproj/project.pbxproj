@@ -21,8 +21,8 @@
 		432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */ = {isa = PBXBuildFile; fileRef = 435799EA1F1629D900AB3EB1 /* BundleR.rb */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBC1F25FD580012F945 /* R.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240271F0E5D1D00CFA8D1 /* R.m */; };
 		435799E41F16294500AB3EB1 /* R-OC.h in Headers */ = {isa = PBXBuildFile; fileRef = 435799E21F16294500AB3EB1 /* R-OC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */; };
-		435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		435799FB1F162C0500AB3EB1 /* RBaseObject+MemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B2402B1F0E5D1D00CFA8D1 /* RBaseObject+MemoryCache.m */; };
+		435799FC1F162C0A00AB3EB1 /* RBaseObject+MemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B2402A1F0E5D1D00CFA8D1 /* RBaseObject+MemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +47,8 @@
 		435799EA1F1629D900AB3EB1 /* BundleR.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; name = BundleR.rb; path = "R-OC/BundleR.rb"; sourceTree = "<group>"; };
 		43B240261F0E5D1D00CFA8D1 /* R.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R.h; sourceTree = "<group>"; };
 		43B240271F0E5D1D00CFA8D1 /* R.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = R.m; sourceTree = "<group>"; };
-		43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RImage+MemoryCache.h"; sourceTree = "<group>"; };
-		43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RImage+MemoryCache.m"; sourceTree = "<group>"; };
+		43B2402A1F0E5D1D00CFA8D1 /* RBaseObject+MemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RBaseObject+MemoryCache.h"; sourceTree = "<group>"; };
+		43B2402B1F0E5D1D00CFA8D1 /* RBaseObject+MemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RBaseObject+MemoryCache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +79,8 @@
 				43B240271F0E5D1D00CFA8D1 /* R.m */,
 				432C270B1FB9A6FC00989D27 /* RBundleResource.h */,
 				432C270C1FB9A6FC00989D27 /* RBundleResource.m */,
-				43B2402A1F0E5D1D00CFA8D1 /* RImage+MemoryCache.h */,
-				43B2402B1F0E5D1D00CFA8D1 /* RImage+MemoryCache.m */,
+				43B2402A1F0E5D1D00CFA8D1 /* RBaseObject+MemoryCache.h */,
+				43B2402B1F0E5D1D00CFA8D1 /* RBaseObject+MemoryCache.m */,
 				431CF1741F1338C300F10CDB /* R-OC-Prefix.pch */,
 				435799E21F16294500AB3EB1 /* R-OC.h */,
 				435799E31F16294500AB3EB1 /* Info.plist */,
@@ -119,7 +119,7 @@
 				432C9FB61F25FC430012F945 /* R.h in Headers */,
 				432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */,
 				432C270A1FB9A5D100989D27 /* RBundle.h in Headers */,
-				435799FC1F162C0A00AB3EB1 /* RImage+MemoryCache.h in Headers */,
+				435799FC1F162C0A00AB3EB1 /* RBaseObject+MemoryCache.h in Headers */,
 				432C27051FB9A52E00989D27 /* RBaseObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +197,7 @@
 				432C9FBC1F25FD580012F945 /* R.m in Sources */,
 				432C27221FB9ACB400989D27 /* RFile.m in Sources */,
 				432C27061FB9A52E00989D27 /* RBaseObject.m in Sources */,
-				435799FB1F162C0500AB3EB1 /* RImage+MemoryCache.m in Sources */,
+				435799FB1F162C0500AB3EB1 /* RBaseObject+MemoryCache.m in Sources */,
 				432C27211FB9ACB400989D27 /* RImage.m in Sources */,
 				432C27231FB9ACB400989D27 /* RXib.m in Sources */,
 				432C270E1FB9A6FC00989D27 /* RBundleResource.m in Sources */,
