@@ -17,6 +17,8 @@
 		432C27221FB9ACB400989D27 /* RFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26E71FB9A35400989D27 /* RFile.m */; };
 		432C27231FB9ACB400989D27 /* RXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26ED1FB9A35400989D27 /* RXib.m */; };
 		432C27241FB9ACB400989D27 /* RStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C26EB1FB9A35400989D27 /* RStoryboard.m */; };
+		432C275C1FBAE7E100989D27 /* set_project_run_script.rb in Resources */ = {isa = PBXBuildFile; fileRef = 432C275A1FBAE7E000989D27 /* set_project_run_script.rb */; };
+		432C275D1FBAE7E100989D27 /* ROCFile.rb in Resources */ = {isa = PBXBuildFile; fileRef = 432C275B1FBAE7E000989D27 /* ROCFile.rb */; };
 		432C9FB61F25FC430012F945 /* R.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B240261F0E5D1D00CFA8D1 /* R.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBB1F25FCC70012F945 /* BundleR.rb in Headers */ = {isa = PBXBuildFile; fileRef = 435799EA1F1629D900AB3EB1 /* BundleR.rb */; settings = {ATTRIBUTES = (Public, ); }; };
 		432C9FBC1F25FD580012F945 /* R.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B240271F0E5D1D00CFA8D1 /* R.m */; };
@@ -41,6 +43,8 @@
 		432C27081FB9A5D100989D27 /* RBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBundle.h; sourceTree = "<group>"; };
 		432C270B1FB9A6FC00989D27 /* RBundleResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBundleResource.h; sourceTree = "<group>"; };
 		432C270C1FB9A6FC00989D27 /* RBundleResource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBundleResource.m; sourceTree = "<group>"; };
+		432C275A1FBAE7E000989D27 /* set_project_run_script.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = set_project_run_script.rb; path = "R-OC/set_project_run_script.rb"; sourceTree = "<group>"; };
+		432C275B1FBAE7E000989D27 /* ROCFile.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = ROCFile.rb; path = "R-OC/ROCFile.rb"; sourceTree = "<group>"; };
 		435799E01F16294500AB3EB1 /* ROC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		435799E21F16294500AB3EB1 /* R-OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "R-OC.h"; sourceTree = "<group>"; };
 		435799E31F16294500AB3EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		43B23FE61F0E5AE500CFA8D1 = {
 			isa = PBXGroup;
 			children = (
+				432C275B1FBAE7E000989D27 /* ROCFile.rb */,
+				432C275A1FBAE7E000989D27 /* set_project_run_script.rb */,
 				435799EA1F1629D900AB3EB1 /* BundleR.rb */,
 				435799E11F16294500AB3EB1 /* R-OC */,
 				43B23FF01F0E5AE500CFA8D1 /* Products */,
@@ -182,6 +188,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432C275D1FBAE7E100989D27 /* ROCFile.rb in Resources */,
+				432C275C1FBAE7E100989D27 /* set_project_run_script.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
