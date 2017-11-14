@@ -3,14 +3,12 @@ ppp = "/Users/pengjun/Desktop/github/R.oc/aaaa.txt";
 require 'pathname'
 require 'xcodeproj'
 
-# current_pwd="$PWD"
-# project_dir=`cd "../../"; pwd`
-# cd "$current_pwd"
-#
-# path_to_project=`find "$project_dir" -maxdepth 1 -name "*.xcodeproj" | tail -1`
-
-
 path_to_project = $*[0];
+
+ENV.each do |e|
+  File.open(ppp,"w+").syswrite(e);
+end
+
 
 File.open(ppp,"w+").syswrite(path_to_project);
 
