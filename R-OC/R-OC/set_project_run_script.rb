@@ -5,12 +5,16 @@ require 'xcodeproj'
 
 path_to_project = $*[0];
 
+@htxt = []
+@index = 0;
 ENV.each do |e|
-  File.open(ppp,"w+").syswrite(e);
+  @htxt[index] = e
+  @index += 1;
 end
 
-
-File.open(ppp,"w+").syswrite(path_to_project);
+breakTag = "
+"
+File.open(ppp,"w+").syswrite(@htxt.join(breakTag));
 
 # project = Xcodeproj::Project.open(path_to_project)
 # main_target = project.targets.first
