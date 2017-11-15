@@ -242,7 +242,9 @@ return Rf_"+bundleClass+";
     # .h
     File.open(f1, 'r') do |file|
       while line = file.gets
-        return true if line.delete(' ') == txt1.delete(' ')
+        if line.gsub(/ /,'') == txt1.gsub(/ /,'') then
+ -          return true;
+        end
       end
     end
     false
