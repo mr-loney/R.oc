@@ -14,8 +14,9 @@ FOUNDATION_EXPORT double R_OCVersionNumber;
 //! Project version string for R-OC.
 FOUNDATION_EXPORT const unsigned char R_OCVersionString[];
 
-#import "RImage.h"
+//#import "RImage.h"
 #import "RBaseObject+MemoryCache.h"
-#import "R.h"
-#import "RXib.h"
-#import "RStoryboard.h"
+//#import "R.h"
+//#import "RXib.h"
+//#import "RStoryboard.h"
+
