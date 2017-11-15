@@ -8,12 +8,13 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform      = :ios, '8.0'
+  # rm -rf R-OC/R-OC/RBundle.*
   s.prepare_command = <<-CMD
-                        rm -rf R-OC/R-OC/RBundle.*
-                        rm -rf R-OC/R-OC/RImage.*
-                        rm -rf R-OC/R-OC/RXib.*
-                        rm -rf R-OC/R-OC/RStoryboard.*
-                        rm -rf R-OC/R-OC/RFile.*
+                        chmod a+w R-OC/R-OC/RBundle.*
+                        chmod a+w R-OC/R-OC/RImage.*
+                        chmod a+w R-OC/R-OC/RXib.*
+                        chmod a+w R-OC/R-OC/RStoryboard.*
+                        chmod a+w R-OC/R-OC/RFile.*
                    CMD
   # s.prepare_command = <<-CMD
   #                       current_pwd="$PWD"
