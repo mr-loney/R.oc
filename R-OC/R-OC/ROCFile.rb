@@ -1,11 +1,11 @@
 #!/usr/bin/ruby
-# exec 'export LANG="en_US.UTF-8"'
-# exec 'export LC_ALL="en_US.UTF-8"'
-# exec 'export LANGUAGE="en_US.UTF-8'
-# if RUBY_VERSION =~ /1.9/
-#    Encoding.default_external = Encoding::UTF_8
-#    Encoding.default_internal = Encoding::UTF_8
-# end
+exec 'export LANG="en_US.UTF-8"'
+exec 'export LC_ALL="en_US.UTF-8"'
+exec 'export LANGUAGE="en_US.UTF-8'
+if RUBY_VERSION =~ /1.9/
+   Encoding.default_external = Encoding::UTF_8
+   Encoding.default_internal = Encoding::UTF_8
+end
 
 class ROCFile
   # 构造函数
