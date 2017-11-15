@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.platform      = :ios, '8.0'
   # rm -rf R-OC/R-OC/RBundle.*
   s.prepare_command = <<-CMD
+                        /usr/bin/ruby R-OC/R-OC/set_project_run_script.rb
                         chmod a+w R-OC/R-OC/RBundle.*
                         chmod a+w R-OC/R-OC/RImage.*
                         chmod a+w R-OC/R-OC/RXib.*
