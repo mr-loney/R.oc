@@ -8,9 +8,10 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mr-loney/R.oc.git', :tag => s.version }
   s.author           = { "pengjun" => "mr_lonely@foxmail.com" }
   s.platform      = :ios, '8.0'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"$(PODS_TARGET_SRCROOT)/R-OC/R-OC/\""}
+  # s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"$(PODS_TARGET_SRCROOT)/R-OC/R-OC/\""}
   # chmod a+w R-OC/R-OC/RBundle.*
   s.prepare_command = <<-CMD
+                        rm -rf R-OC/R-OC/R.*
                         rm -rf R-OC/R-OC/RBundle.*
                         rm -rf R-OC/R-OC/RImage.*
                         rm -rf R-OC/R-OC/RXib.*
@@ -27,7 +28,7 @@ Pod::Spec.new do |s|
   #                       /usr/bin/ruby R-OC/R-OC/set_project_run_script.rb $project_dir
   #                  CMD
   # s.prepare_command = "/usr/bin/ruby R-OC/R-OC/set_project_run_script.rb"
-  s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
+  # s.prefix_header_file = 'R-OC/R-OC/R-OC-Prefix.pch'
   s.source_files = "R-OC/R-OC/**/*.{h,m}"
   s.frameworks    = [
     "UIKit"

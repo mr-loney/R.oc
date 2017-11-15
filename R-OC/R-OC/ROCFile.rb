@@ -25,6 +25,7 @@ AUTO_CLASS_TAG_END'
   end
 
   def reset
+    newRFile
     newBundleFile
     newRImageFile
     newRXibFile
@@ -284,6 +285,75 @@ return Rf_"+bundleClass+";
        end
     end
     File.open(f2, 'w+').syswrite(@mtxt.join(breakTag))
+  end
+
+  def newRFile
+    fph = File.dirname(__FILE__) + '/R.h'
+    fpm = File.dirname(__FILE__) + '/R.m'
+    txtH = "
+#import <Foundation/Foundation.h>
+#import \"RXib.h\"
+#import \"RFile.h\"
+#import \"RImage.h\"
+#import \"RStoryboard.h\"
+#import \"RBundle.h\"
+
+@interface R : NSObject
+
++(RBundle*)bundle;
++(RStoryboard*)storyboard;
++(RImage*)image;
++(RXib*)xib;
++(RFile*)file;
+
+@end
+"
+    txtM = "#import \"R.h\"
+
+static RBundle *Rb;
+static RStoryboard *Rsb;
+static RImage *Ri;
+static RXib *Rx;
+static RFile *Rf;
+
+@implementation R
+
++(RBundle*)bundle {
+    if (!Rb) {
+        Rb = [RBundle new];
+    }
+    return Rb;
+}
++(RStoryboard*)storyboard {
+    if (!Rsb) {
+        Rsb = [RStoryboard new];
+    }
+    return Rsb;
+}
++(RImage*)image {
+    if (!Ri) {
+        Ri = [RImage new];
+    }
+    return Ri;
+}
++(RXib*)xib {
+    if (!Rx) {
+        Rx = [RXib new];
+    }
+    return Rx;
+}
++(RFile*)file {
+    if (!Rf) {
+        Rf = [RFile new];
+    }
+    return Rf;
+}
+
+@end
+"
+
+    File.open(fph, 'w+').syswrite(txtH)
+    File.open(fpm, 'w+').syswrite(txtM)
   end
 
   def newBundleFile
