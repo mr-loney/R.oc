@@ -243,7 +243,7 @@ return Rf_"+bundleClass+";
     File.open(f1, 'r') do |file|
       while line = file.gets
         if line.gsub(/ /,'') == txt1.gsub(/ /,'') then
- -          return true;
+           return true;
         end
       end
     end
